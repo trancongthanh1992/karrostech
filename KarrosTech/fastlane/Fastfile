@@ -1,0 +1,59 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+default_platform(:ios)
+
+platform :ios do
+    desc "Description of what the lane does"
+
+    lane :custom_lane do
+        # add actions here: https://docs.fastlane.tools/actions
+    end
+
+    desc "Testing"
+
+    lane :tests do
+        run_tests(
+            workspace: "KarrosTech.xcworkspace",
+            scheme: "KarrosTech",
+            devices: ["iPhone 6s", "iPad Air"]
+        )
+    end
+
+    lane :register_app do
+        produce(
+            username: "tcthanh1992@gmail.com",
+            app_identifier: "com.gmail.tcthanh1992.KarrosTech.Sample",
+            app_name: "KarrosTech",
+            team_name: "Tran Cong Thanh",
+            itc_team_name: "Tran Cong Thanh",
+        )
+    end
+
+    lane :get_dev_certs do
+        cert(development: true, adhoc: true)
+        sigh(development: true, adhoc: true)
+    end
+
+    lane :sync_all_development do
+        sync_device_info()
+        match(type: "development")
+        match(type: "adhoc")
+        # match(type: "appstore")
+    end
+
+    lane :sync_device_info do
+        # register_devices(devices_file: "./fastlane/devices-ios.txt")
+    end
+end
