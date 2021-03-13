@@ -36,6 +36,9 @@
 		FD0D068E25FBAD7F00A31015 /* InfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD0D068D25FBAD7F00A31015 /* InfoView.xib */; };
 		FD0D069125FBAE3D00A31015 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0D069025FBAE3D00A31015 /* HeaderView.swift */; };
 		FD0D069425FBAE4800A31015 /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD0D069325FBAE4800A31015 /* HeaderView.xib */; };
+		FD97BB6925FCCB6700D37E00 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD97BB6825FCCB6700D37E00 /* NetworkError.swift */; };
+		FD97BB6C25FCCBDF00D37E00 /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD97BB6B25FCCBDF00D37E00 /* RealmService.swift */; };
+		FD97BB6F25FCCC2800D37E00 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD97BB6E25FCCC2800D37E00 /* NetworkManager.swift */; };
 		FDF12C3125FC60F800136287 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF12C3025FC60F800136287 /* DetailViewModel.swift */; };
 		FDF12C3425FC610500136287 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF12C3325FC610500136287 /* HomeViewModel.swift */; };
 		FDF12C3C25FC836E00136287 /* RateStarViewable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF12C3B25FC836E00136287 /* RateStarViewable.swift */; };
@@ -45,7 +48,7 @@
 		FDF12C4A25FC879F00136287 /* RateStarStack.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDF12C4925FC879F00136287 /* RateStarStack.xib */; };
 		FDF12C4E25FC8CFF00136287 /* HeaderSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF12C4D25FC8CFF00136287 /* HeaderSectionView.swift */; };
 		FDF12C5125FC8D0F00136287 /* HeaderSectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDF12C5025FC8D0F00136287 /* HeaderSectionView.xib */; };
-		FDF12C5425FCA31300136287 /* TheMovieDbNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF12C5325FCA31300136287 /* TheMovieDbNetwork.swift */; };
+		FDF12C5425FCA31300136287 /* TheMovieDbService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF12C5325FCA31300136287 /* TheMovieDbService.swift */; };
 		FDF12C7225FCA92600136287 /* Results.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF12C7125FCA92600136287 /* Results.swift */; };
 		FDF12C7625FCA95000136287 /* PopularModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF12C7525FCA95000136287 /* PopularModel.swift */; };
 		FDF12C8325FCAD2300136287 /* DatesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF12C8225FCAD2300136287 /* DatesModel.swift */; };
@@ -91,6 +94,9 @@
 		FD0D068D25FBAD7F00A31015 /* InfoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoView.xib; sourceTree = "<group>"; };
 		FD0D069025FBAE3D00A31015 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		FD0D069325FBAE4800A31015 /* HeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
+		FD97BB6825FCCB6700D37E00 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		FD97BB6B25FCCBDF00D37E00 /* RealmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
+		FD97BB6E25FCCC2800D37E00 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		FDF12C3025FC60F800136287 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		FDF12C3325FC610500136287 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		FDF12C3B25FC836E00136287 /* RateStarViewable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateStarViewable.swift; sourceTree = "<group>"; };
@@ -100,7 +106,7 @@
 		FDF12C4925FC879F00136287 /* RateStarStack.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RateStarStack.xib; sourceTree = "<group>"; };
 		FDF12C4D25FC8CFF00136287 /* HeaderSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderSectionView.swift; sourceTree = "<group>"; };
 		FDF12C5025FC8D0F00136287 /* HeaderSectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderSectionView.xib; sourceTree = "<group>"; };
-		FDF12C5325FCA31300136287 /* TheMovieDbNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheMovieDbNetwork.swift; sourceTree = "<group>"; };
+		FDF12C5325FCA31300136287 /* TheMovieDbService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheMovieDbService.swift; sourceTree = "<group>"; };
 		FDF12C7125FCA92600136287 /* Results.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Results.swift; sourceTree = "<group>"; };
 		FDF12C7525FCA95000136287 /* PopularModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularModel.swift; sourceTree = "<group>"; };
 		FDF12C8225FCAD2300136287 /* DatesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatesModel.swift; sourceTree = "<group>"; };
@@ -162,8 +168,9 @@
 		FD0D061D25FB9EFE00A31015 /* KarrosTech */ = {
 			isa = PBXGroup;
 			children = (
+				FDF12C6E25FCA7DE00136287 /* Realm */,
 				FDF12C7025FCA84C00136287 /* Model */,
-				FDF12C3725FC613A00136287 /* Service */,
+				FDF12C3725FC613A00136287 /* Network */,
 				FDF12C3625FC612A00136287 /* Repository */,
 				FD0D063D25FBA1E800A31015 /* Common */,
 				FD0D063A25FB9FBF00A31015 /* Resources */,
@@ -368,13 +375,14 @@
 			path = Repository;
 			sourceTree = "<group>";
 		};
-		FDF12C3725FC613A00136287 /* Service */ = {
+		FDF12C3725FC613A00136287 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				FDF12C6E25FCA7DE00136287 /* Realm */,
-				FDF12C5625FCA34F00136287 /* Network */,
+				FDF12C5325FCA31300136287 /* TheMovieDbService.swift */,
+				FD97BB6825FCCB6700D37E00 /* NetworkError.swift */,
+				FD97BB6E25FCCC2800D37E00 /* NetworkManager.swift */,
 			);
-			path = Service;
+			path = Network;
 			sourceTree = "<group>";
 		};
 		FDF12C3925FC834200136287 /* HeaderSection */ = {
@@ -406,17 +414,10 @@
 			path = RateStarStack;
 			sourceTree = "<group>";
 		};
-		FDF12C5625FCA34F00136287 /* Network */ = {
-			isa = PBXGroup;
-			children = (
-				FDF12C5325FCA31300136287 /* TheMovieDbNetwork.swift */,
-			);
-			path = Network;
-			sourceTree = "<group>";
-		};
 		FDF12C6E25FCA7DE00136287 /* Realm */ = {
 			isa = PBXGroup;
 			children = (
+				FD97BB6B25FCCBDF00D37E00 /* RealmService.swift */,
 			);
 			path = Realm;
 			sourceTree = "<group>";
@@ -574,13 +575,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				FDF12C4E25FC8CFF00136287 /* HeaderSectionView.swift in Sources */,
-				FDF12C5425FCA31300136287 /* TheMovieDbNetwork.swift in Sources */,
+				FD97BB6C25FCCBDF00D37E00 /* RealmService.swift in Sources */,
+				FD97BB6925FCCB6700D37E00 /* NetworkError.swift in Sources */,
+				FDF12C5425FCA31300136287 /* TheMovieDbService.swift in Sources */,
 				FDF12C3125FC60F800136287 /* DetailViewModel.swift in Sources */,
 				FDF12C3425FC610500136287 /* HomeViewModel.swift in Sources */,
 				FD0D067F25FBAD1300A31015 /* SeriesViewItem.swift in Sources */,
 				FD0D067225FBACC800A31015 /* CommentViewItem.swift in Sources */,
 				FDF12C7625FCA95000136287 /* PopularModel.swift in Sources */,
 				FD0D065A25FBA64800A31015 /* MovieViewItem.swift in Sources */,
+				FD97BB6F25FCCC2800D37E00 /* NetworkManager.swift in Sources */,
 				FDF12C9325FCB5EF00136287 /* Genres.swift in Sources */,
 				FD0D064E25FBA5DB00A31015 /* HotViewItem.swift in Sources */,
 				FDF12C9625FCB63D00136287 /* GenreMovieModel.swift in Sources */,
