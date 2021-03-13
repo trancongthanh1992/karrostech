@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,8 +15,6 @@
 		FD0D062825FB9F0100A31015 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD0D062725FB9F0100A31015 /* Assets.xcassets */; };
 		FD0D062B25FB9F0100A31015 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD0D062925FB9F0100A31015 /* LaunchScreen.storyboard */; };
 		FD0D063525FB9F5700A31015 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0D063425FB9F5700A31015 /* DetailViewController.swift */; };
-		FD0D064025FBA2FA00A31015 /* HeaderSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0D063F25FBA2FA00A31015 /* HeaderSectionView.swift */; };
-		FD0D064325FBA30C00A31015 /* HeaderSectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD0D064225FBA30C00A31015 /* HeaderSectionView.xib */; };
 		FD0D064625FBA34A00A31015 /* HeaderSectionViewable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0D064525FBA34A00A31015 /* HeaderSectionViewable.swift */; };
 		FD0D064E25FBA5DB00A31015 /* HotViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0D064D25FBA5DB00A31015 /* HotViewItem.swift */; };
 		FD0D065125FBA5E700A31015 /* HotViewItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD0D065025FBA5E700A31015 /* HotViewItem.xib */; };
@@ -38,6 +36,15 @@
 		FD0D068E25FBAD7F00A31015 /* InfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD0D068D25FBAD7F00A31015 /* InfoView.xib */; };
 		FD0D069125FBAE3D00A31015 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0D069025FBAE3D00A31015 /* HeaderView.swift */; };
 		FD0D069425FBAE4800A31015 /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD0D069325FBAE4800A31015 /* HeaderView.xib */; };
+		FDF12C3125FC60F800136287 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF12C3025FC60F800136287 /* DetailViewModel.swift */; };
+		FDF12C3425FC610500136287 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF12C3325FC610500136287 /* HomeViewModel.swift */; };
+		FDF12C3C25FC836E00136287 /* RateStarViewable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF12C3B25FC836E00136287 /* RateStarViewable.swift */; };
+		FDF12C3F25FC838D00136287 /* RateStarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF12C3E25FC838D00136287 /* RateStarView.swift */; };
+		FDF12C4225FC83A300136287 /* RateStarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDF12C4125FC83A300136287 /* RateStarView.xib */; };
+		FDF12C4625FC878E00136287 /* RateStarStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF12C4525FC878E00136287 /* RateStarStack.swift */; };
+		FDF12C4A25FC879F00136287 /* RateStarStack.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDF12C4925FC879F00136287 /* RateStarStack.xib */; };
+		FDF12C4E25FC8CFF00136287 /* HeaderSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF12C4D25FC8CFF00136287 /* HeaderSectionView.swift */; };
+		FDF12C5125FC8D0F00136287 /* HeaderSectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDF12C5025FC8D0F00136287 /* HeaderSectionView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,8 +60,6 @@
 		FD0D062A25FB9F0100A31015 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FD0D062C25FB9F0100A31015 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FD0D063425FB9F5700A31015 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
-		FD0D063F25FBA2FA00A31015 /* HeaderSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderSectionView.swift; sourceTree = "<group>"; };
-		FD0D064225FBA30C00A31015 /* HeaderSectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderSectionView.xib; sourceTree = "<group>"; };
 		FD0D064525FBA34A00A31015 /* HeaderSectionViewable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderSectionViewable.swift; sourceTree = "<group>"; };
 		FD0D064D25FBA5DB00A31015 /* HotViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotViewItem.swift; sourceTree = "<group>"; };
 		FD0D065025FBA5E700A31015 /* HotViewItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HotViewItem.xib; sourceTree = "<group>"; };
@@ -76,6 +81,15 @@
 		FD0D068D25FBAD7F00A31015 /* InfoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoView.xib; sourceTree = "<group>"; };
 		FD0D069025FBAE3D00A31015 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		FD0D069325FBAE4800A31015 /* HeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
+		FDF12C3025FC60F800136287 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
+		FDF12C3325FC610500136287 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		FDF12C3B25FC836E00136287 /* RateStarViewable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateStarViewable.swift; sourceTree = "<group>"; };
+		FDF12C3E25FC838D00136287 /* RateStarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateStarView.swift; sourceTree = "<group>"; };
+		FDF12C4125FC83A300136287 /* RateStarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RateStarView.xib; sourceTree = "<group>"; };
+		FDF12C4525FC878E00136287 /* RateStarStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateStarStack.swift; sourceTree = "<group>"; };
+		FDF12C4925FC879F00136287 /* RateStarStack.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RateStarStack.xib; sourceTree = "<group>"; };
+		FDF12C4D25FC8CFF00136287 /* HeaderSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderSectionView.swift; sourceTree = "<group>"; };
+		FDF12C5025FC8D0F00136287 /* HeaderSectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderSectionView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,7 +110,6 @@
 				DA866CA104B1A4BE56F91886 /* Pods-KarrosTech.debug.xcconfig */,
 				4F348519EB77D5F1CE552EA3 /* Pods-KarrosTech.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -129,6 +142,8 @@
 		FD0D061D25FB9EFE00A31015 /* KarrosTech */ = {
 			isa = PBXGroup;
 			children = (
+				FDF12C3725FC613A00136287 /* Service */,
+				FDF12C3625FC612A00136287 /* Repository */,
 				FD0D063D25FBA1E800A31015 /* Common */,
 				FD0D063A25FB9FBF00A31015 /* Resources */,
 				FD0D063925FB9FB000A31015 /* Config */,
@@ -144,6 +159,7 @@
 		FD0D063725FB9F5D00A31015 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				FDF12C2E25FC60C500136287 /* ViewModel */,
 				FD0D064925FBA47E00A31015 /* View */,
 				FD0D062225FB9EFE00A31015 /* HomeViewController.swift */,
 			);
@@ -153,6 +169,7 @@
 		FD0D063825FB9F7C00A31015 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
+				FDF12C2F25FC60D000136287 /* ViewModel */,
 				FD0D065F25FBAB7500A31015 /* View */,
 				FD0D063425FB9F5700A31015 /* DetailViewController.swift */,
 			);
@@ -187,9 +204,9 @@
 		FD0D063E25FBA2C200A31015 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				FD0D064525FBA34A00A31015 /* HeaderSectionViewable.swift */,
-				FD0D063F25FBA2FA00A31015 /* HeaderSectionView.swift */,
-				FD0D064225FBA30C00A31015 /* HeaderSectionView.xib */,
+				FDF12C4425FC875800136287 /* RateStarStack */,
+				FDF12C3A25FC834F00136287 /* RateStar */,
+				FDF12C3925FC834200136287 /* HeaderSection */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -308,6 +325,65 @@
 			path = HeaderView;
 			sourceTree = "<group>";
 		};
+		FDF12C2E25FC60C500136287 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				FDF12C3325FC610500136287 /* HomeViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		FDF12C2F25FC60D000136287 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				FDF12C3025FC60F800136287 /* DetailViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		FDF12C3625FC612A00136287 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		FDF12C3725FC613A00136287 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		FDF12C3925FC834200136287 /* HeaderSection */ = {
+			isa = PBXGroup;
+			children = (
+				FD0D064525FBA34A00A31015 /* HeaderSectionViewable.swift */,
+				FDF12C4D25FC8CFF00136287 /* HeaderSectionView.swift */,
+				FDF12C5025FC8D0F00136287 /* HeaderSectionView.xib */,
+			);
+			path = HeaderSection;
+			sourceTree = "<group>";
+		};
+		FDF12C3A25FC834F00136287 /* RateStar */ = {
+			isa = PBXGroup;
+			children = (
+				FDF12C3B25FC836E00136287 /* RateStarViewable.swift */,
+				FDF12C3E25FC838D00136287 /* RateStarView.swift */,
+				FDF12C4125FC83A300136287 /* RateStarView.xib */,
+			);
+			path = RateStar;
+			sourceTree = "<group>";
+		};
+		FDF12C4425FC875800136287 /* RateStarStack */ = {
+			isa = PBXGroup;
+			children = (
+				FDF12C4525FC878E00136287 /* RateStarStack.swift */,
+				FDF12C4925FC879F00136287 /* RateStarStack.xib */,
+			);
+			path = RateStarStack;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -377,10 +453,12 @@
 				FD0D065125FBA5E700A31015 /* HotViewItem.xib in Resources */,
 				FD0D068E25FBAD7F00A31015 /* InfoView.xib in Resources */,
 				FD0D062625FB9EFE00A31015 /* Main.storyboard in Resources */,
+				FDF12C4225FC83A300136287 /* RateStarView.xib in Resources */,
 				FD0D068225FBAD1F00A31015 /* SeriesViewItem.xib in Resources */,
-				FD0D064325FBA30C00A31015 /* HeaderSectionView.xib in Resources */,
 				FD0D065725FBA61A00A31015 /* CategoryViewItem.xib in Resources */,
+				FDF12C4A25FC879F00136287 /* RateStarStack.xib in Resources */,
 				FD0D069425FBAE4800A31015 /* HeaderView.xib in Resources */,
+				FDF12C5125FC8D0F00136287 /* HeaderSectionView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -433,21 +511,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FDF12C4E25FC8CFF00136287 /* HeaderSectionView.swift in Sources */,
+				FDF12C3125FC60F800136287 /* DetailViewModel.swift in Sources */,
+				FDF12C3425FC610500136287 /* HomeViewModel.swift in Sources */,
 				FD0D067F25FBAD1300A31015 /* SeriesViewItem.swift in Sources */,
 				FD0D067225FBACC800A31015 /* CommentViewItem.swift in Sources */,
 				FD0D065A25FBA64800A31015 /* MovieViewItem.swift in Sources */,
 				FD0D064E25FBA5DB00A31015 /* HotViewItem.swift in Sources */,
 				FD0D067825FBACEE00A31015 /* VideoViewItem.swift in Sources */,
 				FD0D065425FBA60D00A31015 /* CategoryViewItem.swift in Sources */,
+				FDF12C4625FC878E00136287 /* RateStarStack.swift in Sources */,
 				FD0D062325FB9EFE00A31015 /* HomeViewController.swift in Sources */,
 				FD0D061F25FB9EFE00A31015 /* AppDelegate.swift in Sources */,
 				FD0D068525FBAD5300A31015 /* RateView.swift in Sources */,
 				FD0D062125FB9EFE00A31015 /* SceneDelegate.swift in Sources */,
 				FD0D064625FBA34A00A31015 /* HeaderSectionViewable.swift in Sources */,
 				FD0D063525FB9F5700A31015 /* DetailViewController.swift in Sources */,
+				FDF12C3F25FC838D00136287 /* RateStarView.swift in Sources */,
 				FD0D066C25FBAC9D00A31015 /* RecommendationViewItem.swift in Sources */,
+				FDF12C3C25FC836E00136287 /* RateStarViewable.swift in Sources */,
 				FD0D068B25FBAD7300A31015 /* InfoView.swift in Sources */,
-				FD0D064025FBA2FA00A31015 /* HeaderSectionView.swift in Sources */,
 				FD0D069125FBAE3D00A31015 /* HeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
