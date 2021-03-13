@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D23741DE442F2B7E51AD2A04 /* Pods_KarrosTech.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89CBD9BBA17FF2F27C23516C /* Pods_KarrosTech.framework */; };
 		FD0D061F25FB9EFE00A31015 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0D061E25FB9EFE00A31015 /* AppDelegate.swift */; };
 		FD0D062125FB9EFE00A31015 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0D062025FB9EFE00A31015 /* SceneDelegate.swift */; };
 		FD0D062325FB9EFE00A31015 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0D062225FB9EFE00A31015 /* HomeViewController.swift */; };
@@ -40,6 +41,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4F348519EB77D5F1CE552EA3 /* Pods-KarrosTech.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KarrosTech.release.xcconfig"; path = "Target Support Files/Pods-KarrosTech/Pods-KarrosTech.release.xcconfig"; sourceTree = "<group>"; };
+		89CBD9BBA17FF2F27C23516C /* Pods_KarrosTech.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KarrosTech.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA866CA104B1A4BE56F91886 /* Pods-KarrosTech.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KarrosTech.debug.xcconfig"; path = "Target Support Files/Pods-KarrosTech/Pods-KarrosTech.debug.xcconfig"; sourceTree = "<group>"; };
 		FD0D061B25FB9EFE00A31015 /* KarrosTech.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KarrosTech.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD0D061E25FB9EFE00A31015 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FD0D062025FB9EFE00A31015 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -79,17 +83,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D23741DE442F2B7E51AD2A04 /* Pods_KarrosTech.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		292D245689FCF6C04FE04C78 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DA866CA104B1A4BE56F91886 /* Pods-KarrosTech.debug.xcconfig */,
+				4F348519EB77D5F1CE552EA3 /* Pods-KarrosTech.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		B0E71F0681CE2226A3A5B78D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				89CBD9BBA17FF2F27C23516C /* Pods_KarrosTech.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		FD0D061225FB9EFE00A31015 = {
 			isa = PBXGroup;
 			children = (
 				FD0D061D25FB9EFE00A31015 /* KarrosTech */,
 				FD0D061C25FB9EFE00A31015 /* Products */,
+				292D245689FCF6C04FE04C78 /* Pods */,
+				B0E71F0681CE2226A3A5B78D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -290,9 +315,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FD0D062F25FB9F0100A31015 /* Build configuration list for PBXNativeTarget "KarrosTech" */;
 			buildPhases = (
+				06553EE18862A6B514B3B2EF /* [CP] Check Pods Manifest.lock */,
 				FD0D061725FB9EFE00A31015 /* Sources */,
 				FD0D061825FB9EFE00A31015 /* Frameworks */,
 				FD0D061925FB9EFE00A31015 /* Resources */,
+				0E2D8C411C3EA01E72359496 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -358,6 +385,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		06553EE18862A6B514B3B2EF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-KarrosTech-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		0E2D8C411C3EA01E72359496 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KarrosTech/Pods-KarrosTech-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KarrosTech/Pods-KarrosTech-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KarrosTech/Pods-KarrosTech-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		FD0D061725FB9EFE00A31015 /* Sources */ = {
@@ -523,6 +592,7 @@
 		};
 		FD0D063025FB9F0100A31015 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DA866CA104B1A4BE56F91886 /* Pods-KarrosTech.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -542,6 +612,7 @@
 		};
 		FD0D063125FB9F0100A31015 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4F348519EB77D5F1CE552EA3 /* Pods-KarrosTech.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
