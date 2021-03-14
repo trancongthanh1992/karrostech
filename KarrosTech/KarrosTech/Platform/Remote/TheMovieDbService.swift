@@ -8,15 +8,15 @@
 import Foundation
 import Moya
 
-let apiKey = ""
+let apiKey = "438fea3c2c223596a2aa1b8de0828d19"
 let language = "vi-VN"
 
 public enum TheMovieDbService {
-    case recommendations(movieId: Int, apiKey: String)
-    case category(apiKey: String)
-    case popular(apiKey: String)
-    case topRated(apiKey: String)
-    case upcoming(apiKey: String)
+    case recommendations(movieId: Int, page: Int)
+    case category(page: Int)
+    case popular(page: Int)
+    case topRated(page: Int)
+    case upcoming(page: Int)
 }
 
 extension TheMovieDbService: TargetType {
@@ -41,18 +41,31 @@ extension TheMovieDbService: TargetType {
     
     public var task: Task {
         switch self {
-        case .recommendations(_, apiKey):
+        case let .recommendations(_, page):
             return .requestParameters(
-                parameters: ["api_key" : apiKey, "language": language],
+                parameters: ["api_key" : apiKey, "language": language, "page": page],
                 encoding: URLEncoding.queryString
             )
-        case .category(apiKey), .popular(apiKey), .topRated(apiKey), .upcoming(apiKey):
+        case let .category(page):
             return .requestParameters(
-                parameters: ["api_key" : apiKey, "language": language],
+                parameters: ["api_key" : apiKey, "language": language, "page": page],
                 encoding: URLEncoding.queryString
             )
-        default:
-            return .requestPlain
+        case let .popular(page):
+            return .requestParameters(
+                parameters: ["api_key" : apiKey, "language": language, "page": page],
+                encoding: URLEncoding.queryString
+            )
+        case let .topRated(page):
+            return .requestParameters(
+                parameters: ["api_key" : apiKey, "language": language, "page": page],
+                encoding: URLEncoding.queryString
+            )
+        case let .upcoming(page):
+            return .requestParameters(
+                parameters: ["api_key" : apiKey, "language": language, "page": page],
+                encoding: URLEncoding.queryString
+            )
         }
         
     }

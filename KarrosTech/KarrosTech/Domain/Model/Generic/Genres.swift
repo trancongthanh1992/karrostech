@@ -7,12 +7,12 @@
 
 import Foundation
 
-struct Genres<GenreModel: Codable>: Codable {
+struct Genres<Model: Codable>: Codable {
 
     let genres: [GenreModel]?
         
 }
 
-extension Genres where GenreModel == GenreMovieModel{
+extension Genres where Model == GenreModel{
     
 }
