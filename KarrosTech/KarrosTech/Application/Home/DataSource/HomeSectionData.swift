@@ -10,16 +10,19 @@ import RxDataSources
 
 struct HomeSectionDataItem {
     var title: String?
-    var image: String?
+    var posterPath: String?
+    var backdropPath: String?
     var type: String?
     var isShowMore: Bool = false
 }
 
-struct HomeSectionData: SectionModelType {
-    typealias Item = HomeSectionDataItem
-    
+struct HomeSectionData {
     var header: HeaderSectionViewable
     var items: [HomeSectionDataItem]
+}
+
+extension HomeSectionData: SectionModelType {
+    typealias Item = HomeSectionDataItem
     
     init(original: HomeSectionData, items: [HomeSectionDataItem]) {
         self = original

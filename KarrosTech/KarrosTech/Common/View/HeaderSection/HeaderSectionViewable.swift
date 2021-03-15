@@ -13,3 +13,15 @@ protocol HeaderSectionViewable {
     var backgroundColor: String { get }
     var fontSize: Int { get }
 }
+
+struct HeaderSectionViewData: HeaderSectionViewable {
+    var titleHeader: String
+    
+    var isShowViewMore: Bool
+    
+    var backgroundColor: String
+    
+    var fontSize: Int
+    
+    
+}

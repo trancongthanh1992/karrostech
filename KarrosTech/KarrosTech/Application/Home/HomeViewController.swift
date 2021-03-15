@@ -14,17 +14,19 @@ class HomeViewController: UIViewController {
     let disposeBag = DisposeBag()
     private var remote: TheMovieDbRemotable = TheMovieDbRemote()
     
+    private var viewModel: HomeViewModel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-//        TheMovieDbRepository.provider.getHomeRepository(movieId: 277685, apiKey: "438fea3c2c223596a2aa1b8de0828d19").subscribe { (data) in
-//            ///
-//            ///
-//            print(data)
-//        }.disposed(by: disposeBag)
         
-       
+        let homeRemote = TheMovieDbRemote()
+        let homeLocal = TheMovieDbLocal()
+        let homeRepository = TheMovieDbRepository(remote: homeRemote, local: homeLocal)
+        let homeUseCase = HomeUseCase(repository: homeRepository)
         
+        viewModel = HomeViewModel(useCase: homeUseCase)
+        
+   
     }
     
     override func viewWillAppear(_ animated: Bool) {

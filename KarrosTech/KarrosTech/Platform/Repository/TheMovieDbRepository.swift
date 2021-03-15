@@ -9,14 +9,16 @@ import Foundation
 import RxSwift
 import RxSwiftExt
 
-typealias HomeResultable = Observable<(Results<RecommendationModel>, Genres<GenreModel>, Results<PopularModel>, Results<TopRatedModel>, Results<UpcomingModel>)>
+typealias ObHomeResultable = Observable<(Results<RecommendationModel>, Genres<GenreModel>, Results<PopularModel>, Results<TopRatedModel>, Results<UpcomingModel>)>
+typealias HomeResultable = (Results<RecommendationModel>, Genres<GenreModel>, Results<PopularModel>, Results<TopRatedModel>, Results<UpcomingModel>)
+
 
 protocol TheMovieDbRepositoryType {
     
     var remote: TheMovieDbRemotable { get }
     var local: TheMovieDbLocatable { get }
     
-    func getHomeRepository(movieId: Int,page: Int) -> HomeResultable
+    func getHomeRepository(movieId: Int,page: Int) -> ObHomeResultable
     
     func getLoadMoreRecommendations(movieId: Int, page: Int) -> Observable<Results<RecommendationModel>>
     func getLoadMoreCategory(page: Int) -> Observable<Genres<GenreModel>>
@@ -38,7 +40,7 @@ class TheMovieDbRepository: TheMovieDbRepositoryType {
     }
 
     
-    func getHomeRepository(movieId: Int,page: Int = 1) -> HomeResultable {
+    func getHomeRepository(movieId: Int,page: Int = 1) -> ObHomeResultable {
         
         let obRecommendations = remote.fetchRecommendations(movieId: movieId, page: page)
         let obCategory = remote.fetchCategory(page: page)
