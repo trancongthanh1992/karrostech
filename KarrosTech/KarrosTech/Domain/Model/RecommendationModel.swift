@@ -16,7 +16,7 @@ struct RecommendationModel: Codable {
     let id: Int?
     let genreIDS: [Int]?
     let voteCount: Int?
-    let originalLanguage: OriginalLanguageModel?
+    let originalLanguage: String?
     let originalTitle, posterPath: String?
     let popularity: Double?
 

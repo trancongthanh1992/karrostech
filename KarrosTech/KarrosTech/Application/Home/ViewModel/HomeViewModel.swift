@@ -31,8 +31,7 @@ struct HomeViewModel {
         let homeSectionData: Driver<[HomeSectionData]>
     }
     
-    func transform(input: HomeViewModel.Input) -> Void {
-        
+    func transform(input: HomeViewModel.Input) -> HomeViewModel.Output {
         let result = input.firstLoadTrigger.flatMap { _ in
             return useCase.repository
                 .getHomeRepository(movieId: 277685, page: 1)
@@ -70,70 +69,26 @@ struct HomeViewModel {
                     )
 
 
-                    let recommendationItems = (data.0.results ?? [])
-                        .map { data in
-                            return HomeSectionDataItem(title: data.title,
-                                                       posterPath: data.posterPath,
-                                                       backdropPath: data.backdropPath,
-                                                       type: "",
-                                                       isShowMore: false
-                            )
-                        }
-
-                    let categoryItems = (data.1.genres ?? [])
-                        .map { data in
-                            return HomeSectionDataItem(title: data.name,
-                                                       posterPath: "",
-                                                       backdropPath: "",
-                                                       type: "",
-                                                       isShowMore: false
-                            )
-
-                        }
-
-                    let popularItems = (data.2.results ?? [])
-                        .map { data in
-                            return HomeSectionDataItem(title: data.title,
-                                                       posterPath: data.posterPath,
-                                                       backdropPath: data.backdropPath,
-                                                       type: "",
-                                                       isShowMore: false
-                            )
-                        }
-
-                    let topRatedItems = (data.3.results ?? [])
-                        .map { data in
-                            return HomeSectionDataItem(title: data.title,
-                                                       posterPath: data.posterPath,
-                                                       backdropPath: data.backdropPath,
-                                                       type: "",
-                                                       isShowMore: false
-                            )
-                        }
-
-                    let upComingItems = (data.4.results ?? [])
-                        .map { data in
-                            return HomeSectionDataItem(title: data.title,
-                                                       posterPath: data.posterPath,
-                                                       backdropPath: data.backdropPath,
-                                                       type: "",
-                                                       isShowMore: false
-                            )
-                        }
-
-
+                    let recommendationItems = HomeSectionDataItem.Recommendation(data.0)
+                    let categoryItems = HomeSectionDataItem.Category(data.1)
+                    let popularItems = HomeSectionDataItem.Popular(data.2)
+                    let topRatedItems = HomeSectionDataItem.TopRated(data.3)
+                    let upComingItems = HomeSectionDataItem.Upcoming(data.4)
+                    
                     return [
-                        HomeSectionData(header: recommendationHeader, items: recommendationItems),
-                        HomeSectionData(header: categoryHeader, items: categoryItems),
-                        HomeSectionData(header: popularHeader, items: popularItems),
-                        HomeSectionData(header: topRated, items: topRatedItems),
-                        HomeSectionData(header: upComing, items: upComingItems)
+                        HomeSectionData(header: recommendationHeader, items: [recommendationItems]),
+                        HomeSectionData(header: categoryHeader, items: [categoryItems]),
+                        HomeSectionData(header: popularHeader, items: [popularItems]),
+                        HomeSectionData(header: topRated, items: [topRatedItems]),
+                        HomeSectionData(header: upComing, items: [upComingItems])
                     ]
-                }.asDriver(onErrorJustReturn: [HomeSectionData]())
-              
+                }
+                .debug("getHomeRepository Result")
+                .asDriver(onErrorJustReturn: [HomeSectionData]())
         }
-    }
-    
-   
-}
 
+        let output = Output(homeSectionData: result)
+
+        return output
+    }
+}

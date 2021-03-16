@@ -42,14 +42,15 @@ class TheMovieDbRepository: TheMovieDbRepositoryType {
     
     func getHomeRepository(movieId: Int,page: Int = 1) -> ObHomeResultable {
         
-        let obRecommendations = remote.fetchRecommendations(movieId: movieId, page: page)
-        let obCategory = remote.fetchCategory(page: page)
-        let obPopular = remote.fetchPopular(page: page)
-        let obTopRated = remote.fetchTopRated(page: page)
-        let obUpcoming = remote.fetchUpcoming(page: page)
+        let obRecommendations = remote.fetchRecommendations(movieId: movieId, page: page).retry(3)
+        let obCategory = remote.fetchCategory(page: page).retry(3)
+        let obPopular = remote.fetchPopular(page: page).retry(3)
+        let obTopRated = remote.fetchTopRated(page: page).retry(3)
+        let obUpcoming = remote.fetchUpcoming(page: page).retry(3)
         
         
         return Observable.zip(obRecommendations, obCategory, obPopular, obTopRated, obUpcoming) {
+            ///
             return ($0, $1, $2, $3, $4)
         }
     }

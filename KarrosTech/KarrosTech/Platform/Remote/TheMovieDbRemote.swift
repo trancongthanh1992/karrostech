@@ -32,6 +32,7 @@ class TheMovieDbRemote: TheMovieDbRemotable {
             .filterSuccessfulStatusAndRedirectCodes()
             .observeOn(MainScheduler.instance)
             .map(Results<RecommendationModel>.self)
+            .debug("RecommendationModel")
             .asObservable()
             
     }
@@ -43,6 +44,7 @@ class TheMovieDbRemote: TheMovieDbRemotable {
             .filterSuccessfulStatusAndRedirectCodes()
             .observeOn(MainScheduler.instance)
             .map(Genres<GenreModel>.self)
+            .debug("GenreModel")
             .asObservable()
     }
     
@@ -53,6 +55,7 @@ class TheMovieDbRemote: TheMovieDbRemotable {
             .filterSuccessfulStatusAndRedirectCodes()
             .observeOn(MainScheduler.instance)
             .map(Results<PopularModel>.self)
+            .debug("PopularModel")
             .asObservable()
     }
     
@@ -63,6 +66,7 @@ class TheMovieDbRemote: TheMovieDbRemotable {
             .filterSuccessfulStatusAndRedirectCodes()
             .observeOn(MainScheduler.instance)
             .map(Results<TopRatedModel>.self)
+            .debug("TopRatedModel")
             .asObservable()
     }
     
@@ -73,6 +77,7 @@ class TheMovieDbRemote: TheMovieDbRemotable {
             .filterSuccessfulStatusAndRedirectCodes()
             .observeOn(MainScheduler.instance)
             .map(Results<UpcomingModel>.self)
+            .debug("UpcomingModel")
             .asObservable()
     }
 }

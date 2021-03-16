@@ -8,12 +8,12 @@
 import Foundation
 import RxDataSources
 
-struct HomeSectionDataItem {
-    var title: String?
-    var posterPath: String?
-    var backdropPath: String?
-    var type: String?
-    var isShowMore: Bool = false
+enum HomeSectionDataItem {
+    case Recommendation(Results<RecommendationModel>)
+    case Category(Genres<GenreModel>)
+    case Popular(Results<PopularModel>)
+    case TopRated(Results<TopRatedModel>)
+    case Upcoming(Results<UpcomingModel>)
 }
 
 struct HomeSectionData {

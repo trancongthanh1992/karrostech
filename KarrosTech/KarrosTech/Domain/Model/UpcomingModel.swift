@@ -12,7 +12,7 @@ struct UpcomingModel: Codable {
     let backdropPath: String?
     let genreIDS: [Int]?
     let id: Int?
-    let originalLanguage: OriginalLanguageModel?
+    let originalLanguage: String?
     let originalTitle, overview: String?
     let popularity: Double?
     let posterPath, releaseDate, title: String?
