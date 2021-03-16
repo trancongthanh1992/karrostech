@@ -46,9 +46,13 @@ class HomeTableViewCell<T>: UITableViewCell {
         
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView?.collectionViewLayout = layout
+        layout.scrollDirection = .horizontal
+        
         collectionView?.translatesAutoresizingMaskIntoConstraints = false
-    
-        collectionView?.backgroundColor = .blue
+        collectionView?.showsHorizontalScrollIndicator = false
+        collectionView?.showsVerticalScrollIndicator = false
+        
+        collectionView?.backgroundColor = .white
         collectionView?.register(cellClass, forCellWithReuseIdentifier: identifier)
         self.contentView.addSubview(collectionView!)
         
@@ -61,5 +65,22 @@ class HomeTableViewCell<T>: UITableViewCell {
         ])
         
     }
+    
+//    private func customInit() {
+//        // View load nib into UIView.
+//        let bundle = Bundle.main
+//        let nibName = String(describing: Self.self)
+//        bundle.loadNibNamed(nibName, owner: self, options: nil)
+//        
+//        // Add contentView for loading by xib.
+//        addSubview(contentView)
+//        contentView.frame = bounds
+//        contentView.autoresizingMask = [
+//            .flexibleWidth,
+//            .flexibleHeight
+//        ]
+//        
+//        addActionButtonShadow()
+//    }
     
 }

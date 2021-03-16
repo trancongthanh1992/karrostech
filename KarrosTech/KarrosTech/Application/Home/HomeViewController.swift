@@ -45,58 +45,115 @@ class HomeViewController: UIViewController, BindableType {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "RecommendationTableViewCell", for: indexPath) as! HomeTableViewCell<Results<RecommendationModel>>
                 cell.model = model
                 
-                cell.setUpView(cellClass: HomeCollectionViewCell.self,
+                cell.setUpView(cellClass: HotCollectionViewCell.self,
                                identifier: "RecommendationCollectionViewCell",
-                               collectionViewItemSize: (width: 120, height: 200)
+                               collectionViewItemSize: (width: 300, height: 170)
                 )
         
                 
-                Driver
-                    .just(cell.model!.results!)
-                    .drive(cell.collectionView!.rx.items(cellIdentifier: "RecommendationCollectionViewCell", cellType: HomeCollectionViewCell.self)) { row, indexPath, cell in
-                        ///
-                        cell.containerView =
-                        ///
-                    }
-                    .disposed(by: self.disposeBag)
+                if let result = model.results {
+                    Driver
+                        .just(result)
+                        .drive(cell.collectionView!.rx.items(cellIdentifier: "RecommendationCollectionViewCell", cellType: HotCollectionViewCell.self)) { row, indexPath, cell in
+                            cell.backgroundColor = UIColor.red
+                            
+                            ///
+    //                        cell.containerView =
+                            ///
+                        }
+                        .disposed(by: self.disposeBag)
+                }
+
                
                 return cell
             case let .Category(model):
                 let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryTableViewCell", for: indexPath) as! HomeTableViewCell<Genres<GenreModel>>
                 cell.model = model
 
-                cell.setUpView(cellClass: HomeCollectionViewCell.self,
+                cell.setUpView(cellClass: CategoryCollectionViewCell.self,
                                identifier: "CategoryCollectionViewCell",
-                               collectionViewItemSize: (width: 120, height: 200)
+                               collectionViewItemSize: (width: 140, height: 80)
                 )
+                
+                if let result = model.genres {
+                    Driver
+                        .just(result)
+                        .drive(cell.collectionView!.rx.items(cellIdentifier: "CategoryCollectionViewCell", cellType: CategoryCollectionViewCell.self)) { row, indexPath, cell in
+                            cell.backgroundColor = UIColor.green
+                            
+                            ///
+    //                        cell.containerView =
+                            ///
+                        }
+                        .disposed(by: self.disposeBag)
+                }
                 
                 return cell
             case let .Popular(model):
                 let cell = tableView.dequeueReusableCell(withIdentifier: "PopularTableViewCell", for: indexPath) as! HomeTableViewCell<Results<PopularModel>>
                 cell.model = model
                 
-                cell.setUpView(cellClass: HomeCollectionViewCell.self,
+                cell.setUpView(cellClass: MovieCollectionViewCell.self,
                                identifier: "PopularCollectionViewCell",
-                               collectionViewItemSize: (width: 120, height: 200)
+                               collectionViewItemSize: (width: 140, height: 260)
                 )
+                
+                if let result = model.results {
+                    Driver
+                        .just(result)
+                        .drive(cell.collectionView!.rx.items(cellIdentifier: "PopularCollectionViewCell", cellType: MovieCollectionViewCell.self)) { row, indexPath, cell in
+                            cell.backgroundColor = UIColor.blue
+                            
+                            ///
+    //                        cell.containerView =
+                            ///
+                        }
+                        .disposed(by: self.disposeBag)
+                }
                 
                 return cell
             case let .TopRated(model):
                 let cell = tableView.dequeueReusableCell(withIdentifier: "TopRatedTableViewCell", for: indexPath) as! HomeTableViewCell<Results<TopRatedModel>>
                 cell.model = model
-                cell.setUpView(cellClass: HomeCollectionViewCell.self,
+                cell.setUpView(cellClass: MovieCollectionViewCell.self,
                                identifier: "TopRatedCollectionViewCell",
-                               collectionViewItemSize: (width: 120, height: 200)
+                               collectionViewItemSize: (width: 140, height: 260)
                 )
+                
+                if let result = model.results {
+                    Driver
+                        .just(result)
+                        .drive(cell.collectionView!.rx.items(cellIdentifier: "TopRatedCollectionViewCell", cellType: MovieCollectionViewCell.self)) { row, indexPath, cell in
+                            cell.backgroundColor = UIColor.purple
+                            
+                            ///
+    //                        cell.containerView =
+                            ///
+                        }
+                        .disposed(by: self.disposeBag)
+                }
 
                 return cell
             case let .Upcoming(model):
                 let cell = tableView.dequeueReusableCell(withIdentifier: "UpcomingTableViewCell", for: indexPath) as! HomeTableViewCell<Results<UpcomingModel>>
                 cell.model = model
-                cell.setUpView(cellClass: HomeCollectionViewCell.self,
+                cell.setUpView(cellClass: MovieCollectionViewCell.self,
                                identifier: "UpcomingCollectionViewCell",
-                               collectionViewItemSize: (width: 120, height: 200)
+                               collectionViewItemSize: (width: 140, height: 260)
                 )
+                
+                if let result = model.results {
+                    Driver
+                        .just(result)
+                        .drive(cell.collectionView!.rx.items(cellIdentifier: "UpcomingCollectionViewCell", cellType: MovieCollectionViewCell.self)) { row, indexPath, cell in
+                            cell.backgroundColor = UIColor.black
+                            
+                            ///
+    //                        cell.containerView =
+                            ///
+                        }
+                        .disposed(by: self.disposeBag)
+                }
                 
                 return cell
             }
