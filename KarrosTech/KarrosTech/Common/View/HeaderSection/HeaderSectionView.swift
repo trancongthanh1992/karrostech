@@ -9,10 +9,9 @@ import UIKit
 
 class HeaderSectionView: UIView {
 
+    @IBOutlet var containerView: UIView!
     @IBOutlet weak var title: UILabel!
-    @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var loadMore: UIButton!
-    
     
     // headerHome
     // headerHomeRecommend 61
@@ -29,6 +28,36 @@ class HeaderSectionView: UIView {
         // Drawing code
     }
     */
+
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        loadNib()
+        
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        loadNib()
+    }
+    
+    private func loadNib() {
+        // View load nib into UIView.
+        let bundle = Bundle.main
+        let nibName = String(describing: Self.self)
+        bundle.loadNibNamed(nibName, owner: self, options: nil)
+        
+        // Add contentView for loading by xib.
+        addSubview(containerView)
+        containerView.frame = bounds
+    }
+    
+    func setupView(_ headerSectionView: HeaderSectionViewable) {
+        self.title.text = headerSectionView.titleHeader
+        self.title.fontSize(16)
+        self.loadMore.setImage(UIImage(named: "ic-loadmore"), for: .normal)
+    }
+    
+  
     
     @IBAction func onLoadMore(_ sender: Any) {
         

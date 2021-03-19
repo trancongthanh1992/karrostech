@@ -6,12 +6,44 @@
 //
 
 import UIKit
+import RxSwift
+import Kingfisher
+import Reusable
 
-class CategoryCollectionViewCell: UICollectionViewCell {
+class CategoryCollectionViewCell: UICollectionViewCell, NibReusable {
 
+    @IBOutlet weak var shadowView: UIView!
+    @IBOutlet weak var containerView: UIView!
+    @IBOutlet weak var title: UILabel!
+ 
+    private var disposeBag: DisposeBag!
+    
+    var model: GenreModel! {
+        didSet {
+            bindingModel(model)
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        setupView()
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        self.disposeBag = DisposeBag()
     }
 
+    func setupView() -> Void {
+        self.title.fontSize(16)
+        self.containerView.layer.cornerRadius = 6
+        self.containerView.backgroundColor = .blue
+        self.containerView.layer.masksToBounds = true
+        self.shadowView.applyshadowWithCorner(cornerRadius: 6)
+    }
+    
+    private func bindingModel(_ model: GenreModel) -> Void {
+        title.text = model.name
+    }
+    
 }

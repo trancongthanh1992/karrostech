@@ -25,8 +25,9 @@ def testing
 end
 
 def ui
-  pod "StatefulViewController", "~> 3.0"
-  pod 'SkeletonView'
+  #pod "StatefulViewController", "~> 3.0"
+  #pod 'SkeletonView'
+  pod 'Reusable'
 end
 
 target 'KarrosTech' do
@@ -36,5 +37,5 @@ target 'KarrosTech' do
   rx()
   networking()
   testing()
-
+  ui()
 end

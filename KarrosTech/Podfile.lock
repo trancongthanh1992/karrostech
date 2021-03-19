@@ -12,6 +12,11 @@ PODS:
     - Moya/Core
     - RxSwift (~> 4.0)
   - Result (4.1.0)
+  - Reusable (4.1.1):
+    - Reusable/Storyboard (= 4.1.1)
+    - Reusable/View (= 4.1.1)
+  - Reusable/Storyboard (4.1.1)
+  - Reusable/View (4.1.1)
   - RxCocoa (4.5.0):
     - RxSwift (>= 4.4.2, ~> 4.4)
   - RxDataSources (3.1.0):
@@ -35,6 +40,7 @@ DEPENDENCIES:
   - Action
   - Kingfisher
   - Moya/RxSwift (~> 13.0.0)
+  - Reusable
   - RxCocoa
   - RxDataSources
   - RxOptional
@@ -49,6 +55,7 @@ SPEC REPOS:
     - Kingfisher
     - Moya
     - Result
+    - Reusable
     - RxCocoa
     - RxDataSources
     - RxOptional
@@ -62,12 +69,13 @@ SPEC CHECKSUMS:
   Kingfisher: c148cd7b47ebde9989f6bc7c27dcaa79d81279a0
   Moya: f4a4b80ff2f8a4ffc208dfb31cd91636622fee6e
   Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
+  Reusable: 53a9acf5c536f229b31b5865782414b508252ddb
   RxCocoa: cbf70265dc65a981d4ac982e513c10cf23df24a0
   RxDataSources: a843bad90c29817f5923ec8163f4af2de084ceb3
   RxOptional: 80426a0ddbd092573e4c482d8cc13302078c4d5e
   RxSwift: f172070dfd1a93d70a9ab97a5a01166206e1c575
   RxSwiftExt: 01f8ecbeeb355698e9c75365ebe908b00dacf45d
 
-PODFILE CHECKSUM: 8e49a764624c95352e40c42ac2acfd9103072140
+PODFILE CHECKSUM: b68141a976a096163d6785a01013da239493b655
 
 COCOAPODS: 1.10.1

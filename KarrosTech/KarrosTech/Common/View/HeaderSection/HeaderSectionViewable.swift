@@ -12,16 +12,15 @@ protocol HeaderSectionViewable {
     var isShowViewMore: Bool { get }
     var backgroundColor: String { get }
     var fontSize: Int { get }
+    var page: Int? { get set }
+    var totalPage: Int? { get set }
 }
 
 struct HeaderSectionViewData: HeaderSectionViewable {
     var titleHeader: String
-    
     var isShowViewMore: Bool
-    
     var backgroundColor: String
-    
     var fontSize: Int
-    
-    
+    var page: Int?
+    var totalPage: Int?
 }

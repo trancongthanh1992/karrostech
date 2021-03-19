@@ -42,7 +42,7 @@
         <!--Detail View Controller-->
         <scene sceneID="cfA-Id-4y6">
             <objects>
-                <viewController id="484-ym-7bP" customClass="DetailViewController" customModule="KarrosTech" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailViewController" id="484-ym-7bP" customClass="DetailViewController" customModule="KarrosTech" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8va-mK-E5l">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

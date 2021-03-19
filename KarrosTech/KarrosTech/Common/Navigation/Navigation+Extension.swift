@@ -26,6 +26,17 @@ extension UINavigationController {
         self.navigationBar.layer.shadowOpacity = 0.22
     }
     
+   
+    
+    func setNavigationBarButtonRight(image: String = "") -> UIBarButtonItem {
+        let button = UIButton(type: UIButton.ButtonType.custom)
+        button.setImage(UIImage(named: image), for: .normal)
+        
+        return UIBarButtonItem(customView: button)
+    }
+}
+
+extension HomeViewController {
     func setNavigationBarLogo(image: String = "logo", imageHeight: CGFloat = 27) -> Void {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -38,12 +49,5 @@ extension UINavigationController {
         self.navigationItem.titleView?.addSubview(imageView)
         imageView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
         imageView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
-    }
-    
-    func setNavigationBarButtonRight(image: String = "", action: Selector) -> UIBarButtonItem {
-        let button = UIButton(type: UIButton.ButtonType.custom)
-        button.setImage(UIImage(named: image), for: .normal)
-        button.addTarget(self, action: action, for: .touchUpInside)
-        return UIBarButtonItem(customView: button)
     }
 }

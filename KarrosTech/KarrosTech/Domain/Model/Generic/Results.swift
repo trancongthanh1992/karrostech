@@ -9,11 +9,11 @@ import Foundation
 
 // MARK: - Welcome
 struct Results<Model: Codable>: Codable {
-    let id: Int?
-    let dates: DatesModel?
-    let page: Int?
-    let results: [Model]?
-    let totalPages, totalResults: Int?
+    var id: Int?
+    var dates: DatesModel?
+    var page: Int?
+    var results: [Model]?
+    var totalPages, totalResults: Int?
 
     enum CodingKeys: String, CodingKey {
         case id = "id"

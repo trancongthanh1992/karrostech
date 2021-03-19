@@ -6,9 +6,11 @@
 //
 
 import UIKit
+import Reusable
 
-class DetailViewController: UIViewController {
-
+class DetailViewController: UIViewController, StoryboardSceneBased {
+    static var sceneStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

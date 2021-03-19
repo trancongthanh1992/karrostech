@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="UpcomingCollectionViewCell" customModule="KarrosTech" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="153" height="165"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="153" height="165"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lmJ-gY-W5x" customClass="TypeView" customModule="KarrosTech" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="153" height="165"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="lmJ-gY-W5x" secondAttribute="bottom" id="FdM-Hf-oGQ"/>
+                <constraint firstItem="lmJ-gY-W5x" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="IWr-87-IhF"/>
+                <constraint firstItem="lmJ-gY-W5x" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="aBg-Wf-tNf"/>
+                <constraint firstAttribute="trailing" secondItem="lmJ-gY-W5x" secondAttribute="trailing" id="jGV-dt-Vad"/>
+            </constraints>
+            <size key="customSize" width="153" height="165"/>
+            <connections>
+                <outlet property="containerView" destination="lmJ-gY-W5x" id="y3T-Ku-t49"/>
+            </connections>
+            <point key="canvasLocation" x="64.492753623188406" y="173.10267857142856"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
