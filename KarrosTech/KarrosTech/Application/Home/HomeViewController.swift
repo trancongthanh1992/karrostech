@@ -13,11 +13,11 @@ import RxSwiftExt
 import RxOptional
 
 typealias Pagable = (page: Int, total: Int)
+typealias DetailsPagable = (movieId: Int, page: Int, total: Int)
 
 class HomeViewController: UIViewController {
     
     private let disposeBag = DisposeBag()
-    private var remote: TheMovieDbRemotable = TheMovieDbRemote()
     var viewModel: HomeViewModel!
     var dataSource: RxTableViewSectionedReloadDataSource<HomeSectionData>!
     let refreshHandler = UIRefreshControl()
@@ -69,7 +69,7 @@ class HomeViewController: UIViewController {
             .disposed(by: disposeBag)
         
         ///
-        dataSource = HomeDataSource.dataSource(viewModel: viewModel)
+        dataSource = HomeDataSource.dataSource(viewModel: viewModel, navigationController: navigationController!)
         viewModel.homeSectionData
             .bind(to: tableView.rx.items(dataSource: dataSource))
             .disposed(by: disposeBag)
@@ -77,10 +77,12 @@ class HomeViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.navigationController?.isNavigationBarHidden = true
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.navigationController?.isNavigationBarHidden = false
     }
     
 }

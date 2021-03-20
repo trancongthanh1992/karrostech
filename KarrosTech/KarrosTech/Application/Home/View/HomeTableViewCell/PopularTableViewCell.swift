@@ -17,11 +17,13 @@ class PopularTableViewCell: UITableViewCell, NibReusable {
     
     var viewModel: HomeViewModel!
     
-    var model: ObResultPopularModel! {
+    var model: ObResultsPopularModel! {
         didSet {
             self.bindCollectionView(model)
         }
     }
+    
+    var modelSelected: ((PopularModel) -> Void)!
     
     lazy var collectionView: UICollectionView = { width, height in
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: collectionViewLayout(width, height))
@@ -53,7 +55,7 @@ class PopularTableViewCell: UITableViewCell, NibReusable {
 
 extension PopularTableViewCell {
     
-    private func bindCollectionView(_ model: ObResultPopularModel) {
+    private func bindCollectionView(_ model: ObResultsPopularModel) {
         model
             .map { model in model.results }
             .filterNil()
@@ -61,6 +63,21 @@ extension PopularTableViewCell {
             { indexPath, item, cell in
                 cell.model = item
             }
+            .disposed(by: disposeBag)
+        
+        collectionView.rx
+            .reachedTrailing
+            .asObservable()
+            .debounce(0.8, scheduler: MainScheduler.instance)
+            .withLatestFrom(model, resultSelector: { $1 })
+            .map { (page: $0.page!, total: $0.totalPages!) }
+            .bind(to: self.viewModel!.loadMorePopularTrigger)
+            .disposed(by: disposeBag)
+        
+        collectionView.rx.modelSelected(PopularModel.self)
+            .subscribe(onNext: { [unowned self] model in
+                self.modelSelected(model)
+            })
             .disposed(by: disposeBag)
     }
     

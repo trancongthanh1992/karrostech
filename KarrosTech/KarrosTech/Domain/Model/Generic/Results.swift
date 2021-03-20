@@ -14,6 +14,41 @@ struct Results<Model: Codable>: Codable {
     var page: Int?
     var results: [Model]?
     var totalPages, totalResults: Int?
+    
+
+    enum CodingKeys: String, CodingKey {
+        case id = "id"
+        case dates = "dates"
+        case page, results
+        case totalPages = "total_pages"
+        case totalResults = "total_results"
+    }
+}
+
+struct Result<Model: Codable>: Codable {
+    var id: Int?
+    var dates: DatesModel?
+    var page: Int?
+    var results: Model?
+    var totalPages, totalResults: Int?
+    
+
+    enum CodingKeys: String, CodingKey {
+        case id = "id"
+        case dates = "dates"
+        case page, results
+        case totalPages = "total_pages"
+        case totalResults = "total_results"
+    }
+}
+
+struct ResultWatchProvider: Codable {
+    var id: Int?
+    var dates: DatesModel?
+    var page: Int?
+    var results: WatchProviderModel?
+    var totalPages, totalResults: Int?
+    
 
     enum CodingKeys: String, CodingKey {
         case id = "id"

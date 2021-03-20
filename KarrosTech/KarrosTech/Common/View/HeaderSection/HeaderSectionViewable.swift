@@ -6,21 +6,18 @@
 //
 
 import Foundation
+import UIKit
 
 protocol HeaderSectionViewable {
     var titleHeader: String { get }
     var isShowViewMore: Bool { get }
-    var backgroundColor: String { get }
+    var backgroundColor: UIColor { get }
     var fontSize: Int { get }
-    var page: Int? { get set }
-    var totalPage: Int? { get set }
 }
 
 struct HeaderSectionViewData: HeaderSectionViewable {
     var titleHeader: String
     var isShowViewMore: Bool
-    var backgroundColor: String
+    var backgroundColor: UIColor
     var fontSize: Int
-    var page: Int?
-    var totalPage: Int?
 }

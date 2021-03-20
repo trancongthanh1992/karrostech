@@ -17,11 +17,13 @@ class TopRatedTableViewCell: UITableViewCell, NibReusable {
         
     var viewModel: HomeViewModel!
     
-    var model: ObResultTopRatedModel! {
+    var model: ObResultsTopRatedModel! {
         didSet {
             self.bindCollectionView(model)
         }
     }
+    
+    var modelSelected: ((TopRatedModel) -> Void)!
     
     lazy var collectionView: UICollectionView = { width, height in
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: collectionViewLayout(width, height))
@@ -54,7 +56,7 @@ class TopRatedTableViewCell: UITableViewCell, NibReusable {
 extension TopRatedTableViewCell {
     
 
-    private func bindCollectionView(_ model: ObResultTopRatedModel) {
+    private func bindCollectionView(_ model: ObResultsTopRatedModel) {
         model
             .map { model in model.results }
             .filterNil()
@@ -62,6 +64,21 @@ extension TopRatedTableViewCell {
             { indexPath, item, cell in
                 cell.model = item
             }
+            .disposed(by: disposeBag)
+        
+        collectionView.rx
+            .reachedTrailing
+            .asObservable()
+            .debounce(0.8, scheduler: MainScheduler.instance)
+            .withLatestFrom(model, resultSelector: { $1 })
+            .map { (page: $0.page!, total: $0.totalPages!) }
+            .bind(to: self.viewModel!.loadMoreTopRatedTrigger)
+            .disposed(by: disposeBag)
+        
+        collectionView.rx.modelSelected(TopRatedModel.self)
+            .subscribe(onNext: { [unowned self] model in
+                self.modelSelected(model)
+            })
             .disposed(by: disposeBag)
     }
     

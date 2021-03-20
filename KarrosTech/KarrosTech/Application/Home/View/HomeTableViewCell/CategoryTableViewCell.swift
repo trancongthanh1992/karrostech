@@ -17,7 +17,7 @@ class CategoryTableViewCell: UITableViewCell, NibReusable {
        
     var viewModel: HomeViewModel!
     
-    var model: ObResultCategoryModel! {
+    var model: ObResultsCategoryModel! {
         didSet {
             self.bindCollectionView(model)
         }
@@ -54,7 +54,7 @@ class CategoryTableViewCell: UITableViewCell, NibReusable {
 
 extension CategoryTableViewCell {
     
-    private func bindCollectionView(_ model: ObResultCategoryModel) {
+    private func bindCollectionView(_ model: ObResultsCategoryModel) {
 
         model
             .map { model in model.genres }

@@ -17,11 +17,13 @@ class RecommendationTableViewCell: UITableViewCell, NibReusable {
     
     var viewModel: HomeViewModel!
     
-    var model: ObResultRecommendationModel! {
+    var model: ObResultsRecommendationModel! {
         didSet {
             self.bindCollectionView(model)
         }
     }
+    
+    var modelSelected: ((RecommendationModel) -> Void)!
     
     lazy var collectionView: UICollectionView = { width, height in
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: collectionViewLayout(width, height))
@@ -52,7 +54,7 @@ class RecommendationTableViewCell: UITableViewCell, NibReusable {
 
 extension RecommendationTableViewCell {
     
-    private func bindCollectionView(_ model: ObResultRecommendationModel) {
+    private func bindCollectionView(_ model: ObResultsRecommendationModel) {
         
         model
             .map { model in model.results }
@@ -65,9 +67,16 @@ extension RecommendationTableViewCell {
         collectionView.rx
             .reachedTrailing
             .asObservable()
+            .debounce(0.8, scheduler: MainScheduler.instance)
             .withLatestFrom(model, resultSelector: { $1 })
             .map { (page: $0.page!, total: $0.totalPages!) }
             .bind(to: self.viewModel!.loadMoreRecommendationTrigger)
+            .disposed(by: disposeBag)
+        
+        collectionView.rx.modelSelected(RecommendationModel.self)
+            .subscribe(onNext: { [unowned self] model in
+                self.modelSelected(model)
+            })
             .disposed(by: disposeBag)
     }
     

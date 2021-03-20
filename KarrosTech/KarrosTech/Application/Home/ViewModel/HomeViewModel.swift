@@ -50,26 +50,18 @@ class HomeViewModel {
         self.loadMoreTopRatedTrigger = loadMoreTopRatedTrigger
         self.loadMoreUpcomingTrigger = loadMoreUpcomingTrigger
         
-        let resultTrigger = BehaviorRelay<HomeResultable?>(value: nil)
-        
-        
         let resultData = Observable.merge(firstLoadTrigger, pullToRefreshTrigger)
             .flatMapLatest { _ in
                 return useCase.repository
-                    .getHomeRepository(movieId: 277685, page: 1)
+                    .getHomeRepository(movieId: 299536, page: 1)
             }
-        
-        resultData
-            .bind(to: resultTrigger)
-            .disposed(by: dispose)
         
         resultData
             .map({ _ in true })
             .bind(to: isEndLoading)
             .disposed(by: dispose)
         
-        resultTrigger
-            .filterNil()
+        resultData
             .map { [unowned self] data in self.mapData(data) }
             .bind(to: homeSectionData)
             .disposed(by: dispose)
@@ -80,30 +72,18 @@ class HomeViewModel {
             .flatMapFirst { (e)  in
                 return useCase
                     .repository
-                    .getLoadMoreRecommendations(movieId: 277685, page: (e.page + 1))
+                    .getLoadMoreRecommendations(movieId: 299536, page: (e.page + 1))
             }
-            .do(onNext: { (data) in
-                var resultRecommend = resultTrigger.value?.0
-                resultRecommend?.page = data.page
-                resultRecommend?.totalPages = data.totalPages
-            })
-            .withLatestFrom(resultTrigger, resultSelector: { (resultApiData: $0, resultTriggerData: $1) })
-            .withLatestFrom(homeSectionData, resultSelector: { (resultApiData: $0.resultApiData, resultTriggerData: $0.resultTriggerData, resultHomeData: $1) })
+            .withLatestFrom(homeSectionData, resultSelector: { (resultApiData: $0, resultHomeData: $1) })
             .subscribe (onNext: { data in
-                let oldData = data.resultTriggerData!.0.results
-                let apiData = data.resultApiData.results!
-                    
-                var pageData = Results<RecommendationModel>()
-                pageData.page = data.resultApiData.page
-                pageData.totalPages = data.resultApiData.totalPages
-                pageData.results = oldData! + apiData
                 if case let .Recommendation(dataModel) = data.resultHomeData[0].items[0] {
-                    dataModel.onNext(pageData)
+                    var pageData = Results<RecommendationModel>()
+                    pageData.page = data.resultApiData.page
+                    pageData.totalPages = data.resultApiData.totalPages
+                    pageData.results = dataModel.value.results! + data.resultApiData.results!
+                    dataModel.accept(pageData)
                 }
             }).disposed(by: dispose)
-            
-        
-        
         
         loadMorePopularTrigger
             .filter({ $0.page < $0.total })
@@ -112,17 +92,16 @@ class HomeViewModel {
                     .repository
                     .getLoadMorePopular(page: (e.page + 1))
             }
-            .map({ [unowned self] data in self.mapDataPopular(data) })
-            .subscribe(onNext: { data in
-                var resultData = resultTrigger.value
-                resultData?.2.page = data.page
-                resultData?.2.totalPages = data.totalPages
-                resultData?.2.results?.append(contentsOf: data.results!)
-                
-                resultTrigger.accept(resultData)
-            })
-            .disposed(by: dispose)
-        
+            .withLatestFrom(homeSectionData, resultSelector: { (resultApiData: $0, resultHomeData: $1) })
+            .subscribe (onNext: { data in
+                if case let .Popular(dataModel) = data.resultHomeData[2].items[0] {
+                    var pageData = Results<PopularModel>()
+                    pageData.page = data.resultApiData.page
+                    pageData.totalPages = data.resultApiData.totalPages
+                    pageData.results = dataModel.value.results! + data.resultApiData.results!
+                    dataModel.accept(pageData)
+                }
+            }).disposed(by: dispose)
         
         
         loadMoreTopRatedTrigger
@@ -132,15 +111,16 @@ class HomeViewModel {
                     .repository
                     .getLoadMoreTopRated(page: (e.page + 1))
             }
-            .map({ [unowned self] data in self.mapDataTopRated(data) })
-            .subscribe(onNext: { data in
-                var resultData = resultTrigger.value
-                resultData?.3.page = data.page
-                resultData?.3.totalPages = data.totalPages
-                resultData?.3.results?.append(contentsOf: data.results!)
-                resultTrigger.accept(resultData)
-            })
-            .disposed(by: dispose)
+            .withLatestFrom(homeSectionData, resultSelector: { (resultApiData: $0, resultHomeData: $1) })
+            .subscribe (onNext: { data in
+                if case let .TopRated(dataModel) = data.resultHomeData[3].items[0] {
+                    var pageData = Results<TopRatedModel>()
+                    pageData.page = data.resultApiData.page
+                    pageData.totalPages = data.resultApiData.totalPages
+                    pageData.results = dataModel.value.results! + data.resultApiData.results!
+                    dataModel.accept(pageData)
+                }
+            }).disposed(by: dispose)
         
         
         loadMoreUpcomingTrigger
@@ -150,15 +130,16 @@ class HomeViewModel {
                     .repository
                     .getLoadMoreUpcoming(page: (e.page + 1))
             }
-            .map({ [unowned self] data  in self.mapDataUpcoming(data) })
-            .subscribe(onNext: { data in
-                var resultData = resultTrigger.value
-                resultData?.4.page = data.page
-                resultData?.4.totalPages = data.totalPages
-                resultData?.4.results?.append(contentsOf: data.results!)
-                resultTrigger.accept(resultData)
-            })
-            .disposed(by: dispose)
+            .withLatestFrom(homeSectionData, resultSelector: { (resultApiData: $0, resultHomeData: $1) })
+            .subscribe (onNext: { data in
+                if case let .Upcoming(dataModel) = data.resultHomeData[4].items[0] {
+                    var pageData = Results<UpcomingModel>()
+                    pageData.page = data.resultApiData.page
+                    pageData.totalPages = data.resultApiData.totalPages
+                    pageData.results = dataModel.value.results! + data.resultApiData.results!
+                    dataModel.accept(pageData)
+                }
+            }).disposed(by: dispose)
         
         
     }
@@ -180,11 +161,11 @@ class HomeViewModel {
     }
     
     private func mapData(_ data: HomeResultable) -> [HomeSectionData] {
-        let recommendationItems = HomeSectionDataItem.Recommendation(BehaviorSubject(value: data.0))
-        let categoryItems = HomeSectionDataItem.Category(BehaviorSubject(value: data.1))
-        let popularItems = HomeSectionDataItem.Popular(BehaviorSubject(value: data.2))
-        let topRatedItems = HomeSectionDataItem.TopRated(BehaviorSubject(value: data.3))
-        let upComingItems = HomeSectionDataItem.Upcoming(BehaviorSubject(value: data.4))
+        let recommendationItems = HomeSectionDataItem.Recommendation(BehaviorRelay(value: data.0))
+        let categoryItems = HomeSectionDataItem.Category(BehaviorRelay(value: data.1))
+        let popularItems = HomeSectionDataItem.Popular(BehaviorRelay(value: data.2))
+        let topRatedItems = HomeSectionDataItem.TopRated(BehaviorRelay(value: data.3))
+        let upComingItems = HomeSectionDataItem.Upcoming(BehaviorRelay(value: data.4))
         
         return [
             HomeSectionData(header: HomeDataSource.recommendationHeader, items: [recommendationItems]),

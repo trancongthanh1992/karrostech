@@ -21,12 +21,12 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <viewLayoutGuide key="safeArea" id="egp-yh-B1g"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="FjK-n4-Joy" secondAttribute="bottom" id="2OK-mE-VyW"/>
-                            <constraint firstItem="FjK-n4-Joy" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="U4T-ww-CEU"/>
-                            <constraint firstAttribute="trailing" secondItem="FjK-n4-Joy" secondAttribute="trailing" id="m1d-bW-PU9"/>
+                            <constraint firstItem="FjK-n4-Joy" firstAttribute="leading" secondItem="egp-yh-B1g" secondAttribute="leading" id="U4T-ww-CEU"/>
+                            <constraint firstItem="egp-yh-B1g" firstAttribute="trailing" secondItem="FjK-n4-Joy" secondAttribute="trailing" id="m1d-bW-PU9"/>
                             <constraint firstItem="FjK-n4-Joy" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="nqM-ao-dTb"/>
                         </constraints>
                     </view>
@@ -39,20 +39,19 @@
             </objects>
             <point key="canvasLocation" x="1005.7971014492755" y="88.392857142857139"/>
         </scene>
-        <!--Detail View Controller-->
+        <!--Details View Controller-->
         <scene sceneID="cfA-Id-4y6">
             <objects>
-                <viewController storyboardIdentifier="DetailViewController" id="484-ym-7bP" customClass="DetailViewController" customModule="KarrosTech" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailsViewController" id="484-ym-7bP" customClass="DetailsViewController" customModule="KarrosTech" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8va-mK-E5l">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dV0-Ue-UqS">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="dV0-Ue-UqS">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </tableView>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="Syl-7q-SZP"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="dV0-Ue-UqS" firstAttribute="leading" secondItem="8va-mK-E5l" secondAttribute="leading" id="2Mx-IX-SFz"/>
@@ -61,6 +60,9 @@
                             <constraint firstAttribute="bottom" secondItem="dV0-Ue-UqS" secondAttribute="bottom" id="Xsr-dh-AEV"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="dV0-Ue-UqS" id="aaV-bC-VmE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W2r-rU-8UQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

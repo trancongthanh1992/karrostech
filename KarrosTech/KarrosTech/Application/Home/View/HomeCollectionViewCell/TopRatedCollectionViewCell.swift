@@ -34,6 +34,11 @@ class TopRatedCollectionViewCell: UICollectionViewCell, NibReusable {
         super.awakeFromNib()
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        self.containerView.imageView.kf.cancelDownloadTask()
+    }
+    
     private func bindingModel(_ model: TopRatedModel) -> Void {
         self.containerView.title.text = model.title
         guard let posterPath = model.posterPath else { return }

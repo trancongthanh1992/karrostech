@@ -12,15 +12,7 @@ class HeaderSectionView: UIView {
     @IBOutlet var containerView: UIView!
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var loadMore: UIButton!
-    
-    // headerHome
-    // headerHomeRecommend 61
-    // headerCateogry 59
-    // headerPopular 59
-    // headerTopRated: 59
-    
-    // headerDetail 48
-
+ 
     /*
     // Only override draw() if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
@@ -54,7 +46,11 @@ class HeaderSectionView: UIView {
     func setupView(_ headerSectionView: HeaderSectionViewable) {
         self.title.text = headerSectionView.titleHeader
         self.title.fontSize(16)
-        self.loadMore.setImage(UIImage(named: "ic-loadmore"), for: .normal)
+        self.containerView.backgroundColor = headerSectionView.backgroundColor
+        if headerSectionView.isShowViewMore == true {
+            self.loadMore.setImage(UIImage(named: "ic-loadmore"), for: .normal)
+        }
+        
     }
     
   
@@ -64,35 +60,3 @@ class HeaderSectionView: UIView {
     }
     
 }
-//
-//extension HeaderSectionView: HeaderSectionViewable {
-//    var titleHeader: String {
-//        get {
-//            self.title.text ?? ""
-//        }
-//       
-//    }
-//
-//    var isShowViewMore: Bool {
-//        get {
-//            <#code#>
-//        }
-//        
-//    }
-//
-//    var backgroundColor: String {
-//        get {
-//            <#code#>
-//        }
-//        
-//    }
-//
-//    var fontSize: Int {
-//        get {
-//            <#code#>
-//        }
-//        
-//    }
-//
-//
-//}

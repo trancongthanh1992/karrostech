@@ -17,11 +17,13 @@ class UpcomingTableViewCell: UITableViewCell, NibReusable {
     
     var viewModel: HomeViewModel!
     
-    var model: ObResultUpcomingModel! {
+    var model: ObResultsUpcomingModel! {
         didSet {
             bindCollectionView(model)
         }
     }
+    
+    var modelSelected: ((UpcomingModel) -> Void)!
     
     lazy var collectionView: UICollectionView = { width, height in
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: collectionViewLayout(width, height))
@@ -53,7 +55,7 @@ class UpcomingTableViewCell: UITableViewCell, NibReusable {
 
 extension UpcomingTableViewCell {
     
-    private func bindCollectionView(_ model: ObResultUpcomingModel) {
+    private func bindCollectionView(_ model: ObResultsUpcomingModel) {
         model
             .map { model in model.results }
             .filterNil()
@@ -61,6 +63,21 @@ extension UpcomingTableViewCell {
             { indexPath, item, cell in
                 cell.model = item
             }
+            .disposed(by: disposeBag)
+        
+        collectionView.rx
+            .reachedTrailing
+            .asObservable()
+            .debounce(0.8, scheduler: MainScheduler.instance)
+            .withLatestFrom(model, resultSelector: { $1 })
+            .map { (page: $0.page!, total: $0.totalPages!) }
+            .bind(to: self.viewModel!.loadMoreUpcomingTrigger)
+            .disposed(by: disposeBag)
+        
+        collectionView.rx.modelSelected(UpcomingModel.self)
+            .subscribe(onNext: { [unowned self] model in
+                self.modelSelected(model)
+            })
             .disposed(by: disposeBag)
     }
     

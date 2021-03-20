@@ -25,7 +25,7 @@ extension UIImageView {
 
 
 extension UIView {
-    func applyshadowWithCorner(cornerRadius: CGFloat = 6){
+    func applyshadowWithCorner(cornerRadius: CGFloat = 6) {
         self.layer.cornerRadius = cornerRadius
         self.layer.shadowColor = UIColor.black.cgColor
         self.layer.shadowOffset = CGSize(width: 0, height: 0)
@@ -36,9 +36,15 @@ extension UIView {
 
 extension UILabel{
     
-    func fontSize(_ size: CGFloat = 15) {
+    @discardableResult
+    func fontSize(_ size: CGFloat = 15) -> UILabel {
         self.font = UIFont(name: "Helvetica", size: size)
+        return self
     }
-    
-   
+ 
+    @discardableResult
+    func color(_ color: UIColor = .black) -> UILabel {
+        self.textColor = color
+        return self
+    }
 }
