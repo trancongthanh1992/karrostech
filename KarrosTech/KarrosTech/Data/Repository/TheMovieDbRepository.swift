@@ -17,18 +17,18 @@ protocol TheMovieDbRepositoryType {
     func getHomeRepository(movieId: Int,page: Int) -> ObHomeResultable
     
     ///
-    func getLoadMoreRecommendations(movieId: Int, page: Int) -> Observable<Results<RecommendationModel>>
-    func getLoadMoreCategory(page: Int) -> Observable<Genres<GenreModel>>
-    func getLoadMorePopular(page: Int) -> Observable<Results<PopularModel>>
-    func getLoadMoreTopRated(page: Int) -> Observable<Results<TopRatedModel>>
-    func getLoadMoreUpcoming(page: Int) -> Observable<Results<UpcomingModel>>
+    func getLoadMoreRecommendations(movieId: Int, page: Int) -> Observable<Results<RecommendationEntity>>
+    func getLoadMoreCategory(page: Int) -> Observable<Genres<GenreEntity>>
+    func getLoadMorePopular(page: Int) -> Observable<Results<PopularEntity>>
+    func getLoadMoreTopRated(page: Int) -> Observable<Results<TopRatedEntity>>
+    func getLoadMoreUpcoming(page: Int) -> Observable<Results<UpcomingEntity>>
     
     ///
     func getDetails(movieId: Int, page: Int) -> ObDetailsResultable
-    func getDetailsMovieRepository(movieId: Int) -> Observable<MovieDetailsModel>
-    func getDetailsCreditsRepository(movieId: Int) -> Observable<CreditsModel>
-    func getDetailsVideoRepository(movieId: Int) -> Observable<Results<VideoModel>>
-    func getDetailsReviewRepository(movieId: Int) -> Observable<Results<ReviewModel>>
+    func getDetailsMovieRepository(movieId: Int) -> Observable<MovieDetailsEntity>
+    func getDetailsCreditsRepository(movieId: Int) -> Observable<CreditsEntity>
+    func getDetailsVideoRepository(movieId: Int) -> Observable<Results<VideoEntity>>
+    func getDetailsReviewRepository(movieId: Int) -> Observable<Results<ReviewEntity>>
     func getDetailsWatchProvidersRepository(movieId: Int) -> Observable<ResultWatchProvider>
 }
 
@@ -57,24 +57,24 @@ class TheMovieDbRepository: TheMovieDbRepositoryType {
         }
     }
     
-    func getLoadMoreRecommendations(movieId: Int, page: Int = 1) -> Observable<Results<RecommendationModel>> {
+    func getLoadMoreRecommendations(movieId: Int, page: Int = 1) -> Observable<Results<RecommendationEntity>> {
         return remote.fetchRecommendations(movieId: movieId, page: page)
     }
     
-    func getLoadMoreCategory(page: Int) -> Observable<Genres<GenreModel>> {
+    func getLoadMoreCategory(page: Int) -> Observable<Genres<GenreEntity>> {
         return remote.fetchCategory(page: page)
     }
     
-    func getLoadMorePopular(page: Int) -> Observable<Results<PopularModel>> {
+    func getLoadMorePopular(page: Int) -> Observable<Results<PopularEntity>> {
         return remote.fetchPopular(page: page)
     }
     
-    func getLoadMoreTopRated(page: Int) -> Observable<Results<TopRatedModel>> {
+    func getLoadMoreTopRated(page: Int) -> Observable<Results<TopRatedEntity>> {
         return remote.fetchTopRated(page: page)
         
     }
     
-    func getLoadMoreUpcoming(page: Int) -> Observable<Results<UpcomingModel>> {
+    func getLoadMoreUpcoming(page: Int) -> Observable<Results<UpcomingEntity>> {
         return remote.fetchUpcoming(page: page)
     }
 
@@ -91,19 +91,19 @@ class TheMovieDbRepository: TheMovieDbRepositoryType {
         }
     }
     
-    func getDetailsMovieRepository(movieId: Int) -> Observable<MovieDetailsModel> {
+    func getDetailsMovieRepository(movieId: Int) -> Observable<MovieDetailsEntity> {
         return remote.fetchDetailsMovie(movieId: movieId)
     }
     
-    func getDetailsVideoRepository(movieId: Int) -> Observable<Results<VideoModel>> {
+    func getDetailsVideoRepository(movieId: Int) -> Observable<Results<VideoEntity>> {
         return remote.fetchDetailsVideo(movieId: movieId)
     }
     
-    func getDetailsReviewRepository(movieId: Int) -> Observable<Results<ReviewModel>> {
+    func getDetailsReviewRepository(movieId: Int) -> Observable<Results<ReviewEntity>> {
         return remote.fetchDetailsReview(movieId: movieId)
     }
     
-    func getDetailsCreditsRepository(movieId: Int) -> Observable<CreditsModel> {
+    func getDetailsCreditsRepository(movieId: Int) -> Observable<CreditsEntity> {
         return remote.fetchDetailsCredits(movieId: movieId)
     }
     

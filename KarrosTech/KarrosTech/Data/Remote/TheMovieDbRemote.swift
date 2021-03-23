@@ -13,17 +13,17 @@ import RxSwiftExt
 protocol TheMovieDbRemotable {
     var provider: MoyaProvider<TheMovieDbService> { get }
     
-    func fetchRecommendations(movieId: Int, page: Int) -> Observable<Results<RecommendationModel>>
-    func fetchCategory(page: Int) -> Observable<Genres<GenreModel>>
-    func fetchPopular(page: Int) -> Observable<Results<PopularModel>>
-    func fetchTopRated(page: Int) -> Observable<Results<TopRatedModel>>
-    func fetchUpcoming(page: Int) -> Observable<Results<UpcomingModel>>
+    func fetchRecommendations(movieId: Int, page: Int) -> Observable<Results<RecommendationEntity>>
+    func fetchCategory(page: Int) -> Observable<Genres<GenreEntity>>
+    func fetchPopular(page: Int) -> Observable<Results<PopularEntity>>
+    func fetchTopRated(page: Int) -> Observable<Results<TopRatedEntity>>
+    func fetchUpcoming(page: Int) -> Observable<Results<UpcomingEntity>>
     
     ///
-    func fetchDetailsMovie(movieId: Int) -> Observable<MovieDetailsModel>
-    func fetchDetailsVideo(movieId: Int) -> Observable<Results<VideoModel>>
-    func fetchDetailsCredits(movieId: Int) -> Observable<CreditsModel>
-    func fetchDetailsReview(movieId: Int) -> Observable<Results<ReviewModel>>
+    func fetchDetailsMovie(movieId: Int) -> Observable<MovieDetailsEntity>
+    func fetchDetailsVideo(movieId: Int) -> Observable<Results<VideoEntity>>
+    func fetchDetailsCredits(movieId: Int) -> Observable<CreditsEntity>
+    func fetchDetailsReview(movieId: Int) -> Observable<Results<ReviewEntity>>
     func fetchDetailsWatchProviders(movieId: Int) -> Observable<ResultWatchProvider>
 }
 
@@ -31,102 +31,102 @@ class TheMovieDbRemote: TheMovieDbRemotable {
 
     var provider =  MoyaProvider<TheMovieDbService>(plugins: [NetworkLoggerPlugin()])
     
-    func fetchRecommendations(movieId: Int, page: Int) -> Observable<Results<RecommendationModel>> {
+    func fetchRecommendations(movieId: Int, page: Int) -> Observable<Results<RecommendationEntity>> {
         provider
             .rx
             .request(.recommendations(movieId: movieId, page: page))
             .filterSuccessfulStatusAndRedirectCodes()
             .observeOn(MainScheduler.instance)
-            .map(Results<RecommendationModel>.self)
+            .map(Results<RecommendationEntity>.self)
             .debug("RecommendationModel")
             .asObservable()
             
     }
     
-    func fetchCategory(page: Int) -> Observable<Genres<GenreModel>> {
+    func fetchCategory(page: Int) -> Observable<Genres<GenreEntity>> {
         provider
             .rx
             .request(.category(page: page))
             .filterSuccessfulStatusAndRedirectCodes()
             .observeOn(MainScheduler.instance)
-            .map(Genres<GenreModel>.self)
+            .map(Genres<GenreEntity>.self)
             .debug("GenreModel")
             .asObservable()
     }
     
-    func fetchPopular(page: Int) -> Observable<Results<PopularModel>> {
+    func fetchPopular(page: Int) -> Observable<Results<PopularEntity>> {
         provider
             .rx
             .request(.popular(page: page))
             .filterSuccessfulStatusAndRedirectCodes()
             .observeOn(MainScheduler.instance)
-            .map(Results<PopularModel>.self)
+            .map(Results<PopularEntity>.self)
             .debug("PopularModel")
             .asObservable()
     }
     
-    func fetchTopRated(page: Int) -> Observable<Results<TopRatedModel>> {
+    func fetchTopRated(page: Int) -> Observable<Results<TopRatedEntity>> {
         provider
             .rx
             .request(.topRated(page: page))
             .filterSuccessfulStatusAndRedirectCodes()
             .observeOn(MainScheduler.instance)
-            .map(Results<TopRatedModel>.self)
+            .map(Results<TopRatedEntity>.self)
             .debug("TopRatedModel")
             .asObservable()
     }
     
-    func fetchUpcoming(page: Int) -> Observable<Results<UpcomingModel>> {
+    func fetchUpcoming(page: Int) -> Observable<Results<UpcomingEntity>> {
         provider
             .rx
             .request(.upcoming(page: page))
             .filterSuccessfulStatusAndRedirectCodes()
             .observeOn(MainScheduler.instance)
-            .map(Results<UpcomingModel>.self)
+            .map(Results<UpcomingEntity>.self)
             .debug("UpcomingModel")
             .asObservable()
     }
     
-    func fetchDetailsMovie(movieId: Int) -> Observable<MovieDetailsModel> {
+    func fetchDetailsMovie(movieId: Int) -> Observable<MovieDetailsEntity> {
         provider
             .rx
             .request(.details(movieId: movieId))
             .filterSuccessfulStatusAndRedirectCodes()
             .observeOn(MainScheduler.instance)
-            .map(MovieDetailsModel.self)
+            .map(MovieDetailsEntity.self)
             .debug("MovieDetailModel")
             .asObservable()
     }
     
-    func fetchDetailsVideo(movieId: Int) -> Observable<Results<VideoModel>> {
+    func fetchDetailsVideo(movieId: Int) -> Observable<Results<VideoEntity>> {
         provider
             .rx
             .request(.detailsVideo(movieId: movieId))
             .filterSuccessfulStatusAndRedirectCodes()
             .observeOn(MainScheduler.instance)
-            .map(Results<VideoModel>.self)
+            .map(Results<VideoEntity>.self)
             .debug("VideoModel")
             .asObservable()
     }
     
-    func fetchDetailsReview(movieId: Int) -> Observable<Results<ReviewModel>> {
+    func fetchDetailsReview(movieId: Int) -> Observable<Results<ReviewEntity>> {
         provider
             .rx
             .request(.detailsReview(movieId: movieId))
             .filterSuccessfulStatusAndRedirectCodes()
             .observeOn(MainScheduler.instance)
-            .map(Results<ReviewModel>.self)
+            .map(Results<ReviewEntity>.self)
             .debug("UpcomingModel")
             .asObservable()
     }
     
-    func fetchDetailsCredits(movieId: Int) -> Observable<CreditsModel> {
+    func fetchDetailsCredits(movieId: Int) -> Observable<CreditsEntity> {
         provider
             .rx
             .request(.detailsCredits(movieId: movieId))
             .filterSuccessfulStatusAndRedirectCodes()
             .observeOn(MainScheduler.instance)
-            .map(CreditsModel.self)
+            .map(CreditsEntity.self)
             .debug("CreditsModel")
             .asObservable()
     }
