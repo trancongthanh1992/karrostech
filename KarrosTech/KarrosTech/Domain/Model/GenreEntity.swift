@@ -9,7 +9,7 @@
 import Foundation
 
 // MARK: - Genre
-struct GenreModel: Codable {
+struct GenreEntity: Codable {
     let id: Int?
     let name: String?
 }

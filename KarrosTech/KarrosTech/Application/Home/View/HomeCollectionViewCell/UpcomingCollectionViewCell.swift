@@ -16,7 +16,7 @@ class UpcomingCollectionViewCell: UICollectionViewCell, NibReusable {
     
     private var disposeBag: DisposeBag!
     
-    var model: UpcomingModel! {
+    var model: UpcomingEntity! {
         didSet {
             bindingModel(model)
         }
@@ -39,7 +39,7 @@ class UpcomingCollectionViewCell: UICollectionViewCell, NibReusable {
         self.containerView.imageView.kf.cancelDownloadTask()
     }
     
-    private func bindingModel(_ model: UpcomingModel) -> Void {
+    private func bindingModel(_ model: UpcomingEntity) -> Void {
         self.containerView.title.text = model.title
         guard let posterPath = model.posterPath else { return }
         let url = URL(string: "https://image.tmdb.org/t/p/w300\(posterPath)")

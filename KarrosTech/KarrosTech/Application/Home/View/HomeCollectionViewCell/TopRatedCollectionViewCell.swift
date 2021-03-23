@@ -16,7 +16,7 @@ class TopRatedCollectionViewCell: UICollectionViewCell, NibReusable {
     
     private var disposeBag: DisposeBag!
     
-    var model: TopRatedModel! {
+    var model: TopRatedEntity! {
         didSet {
             bindingModel(model)
         }
@@ -39,7 +39,7 @@ class TopRatedCollectionViewCell: UICollectionViewCell, NibReusable {
         self.containerView.imageView.kf.cancelDownloadTask()
     }
     
-    private func bindingModel(_ model: TopRatedModel) -> Void {
+    private func bindingModel(_ model: TopRatedEntity) -> Void {
         self.containerView.title.text = model.title
         guard let posterPath = model.posterPath else { return }
         let url = URL(string: "https://image.tmdb.org/t/p/w300\(posterPath)")

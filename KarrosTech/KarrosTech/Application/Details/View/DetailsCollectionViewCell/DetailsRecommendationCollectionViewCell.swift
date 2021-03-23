@@ -17,7 +17,7 @@ class DetailsRecommendationCollectionViewCell: UICollectionViewCell, NibReusable
     
     @IBOutlet weak var containerView: RecommendationViewItem!
     
-    var model: RecommendationModel! {
+    var model: RecommendationEntity! {
         didSet {
             bindingModel(model)
         }
@@ -34,7 +34,7 @@ class DetailsRecommendationCollectionViewCell: UICollectionViewCell, NibReusable
     }
 
     
-    private func bindingModel(_ model: RecommendationModel) -> Void {
+    private func bindingModel(_ model: RecommendationEntity) -> Void {
         self.containerView.titleLabel.text = model.title
         guard let posterPath = model.posterPath else { return }
         let url = URL(string: "https://image.tmdb.org/t/p/w300\(posterPath)")

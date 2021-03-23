@@ -7,8 +7,8 @@
 
 import Foundation
 
-struct WatchProviderModel: Codable {
-    let us: UsModel?
+struct WatchProviderEntity: Codable {
+    let us: UsEntity?
 
     enum CodingKeys: String, CodingKey {
         case us = "US"

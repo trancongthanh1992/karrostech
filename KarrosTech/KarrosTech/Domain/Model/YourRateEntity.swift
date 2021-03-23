@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct YourRateModel  {
+struct YourRateEntity  {
     let rating: Double?
     let content: String?
 }

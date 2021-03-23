@@ -23,7 +23,7 @@ class RecommendationTableViewCell: UITableViewCell, NibReusable {
         }
     }
     
-    var modelSelected: ((RecommendationModel) -> Void)!
+    var modelSelected: ((RecommendationEntity) -> Void)!
     
     lazy var collectionView: UICollectionView = { width, height in
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: collectionViewLayout(width, height))
@@ -73,7 +73,7 @@ extension RecommendationTableViewCell {
             .bind(to: self.viewModel!.loadMoreRecommendationTrigger)
             .disposed(by: disposeBag)
         
-        collectionView.rx.modelSelected(RecommendationModel.self)
+        collectionView.rx.modelSelected(RecommendationEntity.self)
             .subscribe(onNext: { [unowned self] model in
                 self.modelSelected(model)
             })

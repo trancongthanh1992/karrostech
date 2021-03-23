@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct BelongsToCollectionModel: Codable {
+struct BelongsToCollectionEntity: Codable {
     let id: Int?
     let name, posterPath, backdropPath: String?
 

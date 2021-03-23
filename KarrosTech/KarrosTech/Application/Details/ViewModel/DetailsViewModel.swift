@@ -69,7 +69,7 @@ extension DetailsViewModel {
     private func mapData(_ data: DetailsResultable) -> [DetailsSectionData] {
         
         let infoItems = DetailsSectionDataItem.Info(Observable.just(data.0))
-        let rateItems = DetailsSectionDataItem.Rate(Observable.just(YourRateModel(rating: 0.0, content: "")))
+        let rateItems = DetailsSectionDataItem.Rate(Observable.just(YourRateEntity(rating: 0.0, content: "")))
         let creditItems = DetailsSectionDataItem.Credit(Observable.just(data.1))
         let videoItems = DetailsSectionDataItem.Video(Observable.just(data.2))
         let commentItems = data.3.results?.map({ DetailsSectionDataItem.Comment($0) })

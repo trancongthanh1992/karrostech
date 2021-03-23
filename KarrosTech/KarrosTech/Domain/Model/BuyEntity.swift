@@ -8,7 +8,7 @@
 import Foundation
 
 // MARK: - Buy
-struct BuyModel: Codable {
+struct BuyEntity: Codable {
     let displayPriority: Int?
     let logoPath: String?
     let providerID: Int?

@@ -77,7 +77,7 @@ class HomeViewModel {
             .withLatestFrom(homeSectionData, resultSelector: { (resultApiData: $0, resultHomeData: $1) })
             .subscribe (onNext: { data in
                 if case let .Recommendation(dataModel) = data.resultHomeData[0].items[0] {
-                    var pageData = Results<RecommendationModel>()
+                    var pageData = Results<RecommendationEntity>()
                     pageData.page = data.resultApiData.page
                     pageData.totalPages = data.resultApiData.totalPages
                     pageData.results = dataModel.value.results! + data.resultApiData.results!
@@ -95,7 +95,7 @@ class HomeViewModel {
             .withLatestFrom(homeSectionData, resultSelector: { (resultApiData: $0, resultHomeData: $1) })
             .subscribe (onNext: { data in
                 if case let .Popular(dataModel) = data.resultHomeData[2].items[0] {
-                    var pageData = Results<PopularModel>()
+                    var pageData = Results<PopularEntity>()
                     pageData.page = data.resultApiData.page
                     pageData.totalPages = data.resultApiData.totalPages
                     pageData.results = dataModel.value.results! + data.resultApiData.results!
@@ -114,7 +114,7 @@ class HomeViewModel {
             .withLatestFrom(homeSectionData, resultSelector: { (resultApiData: $0, resultHomeData: $1) })
             .subscribe (onNext: { data in
                 if case let .TopRated(dataModel) = data.resultHomeData[3].items[0] {
-                    var pageData = Results<TopRatedModel>()
+                    var pageData = Results<TopRatedEntity>()
                     pageData.page = data.resultApiData.page
                     pageData.totalPages = data.resultApiData.totalPages
                     pageData.results = dataModel.value.results! + data.resultApiData.results!
@@ -133,7 +133,7 @@ class HomeViewModel {
             .withLatestFrom(homeSectionData, resultSelector: { (resultApiData: $0, resultHomeData: $1) })
             .subscribe (onNext: { data in
                 if case let .Upcoming(dataModel) = data.resultHomeData[4].items[0] {
-                    var pageData = Results<UpcomingModel>()
+                    var pageData = Results<UpcomingEntity>()
                     pageData.page = data.resultApiData.page
                     pageData.totalPages = data.resultApiData.totalPages
                     pageData.results = dataModel.value.results! + data.resultApiData.results!
@@ -144,19 +144,19 @@ class HomeViewModel {
         
     }
     
-    private func mapDataRecommendation(_ data: Results<RecommendationModel>) -> Results<RecommendationModel> {
+    private func mapDataRecommendation(_ data: Results<RecommendationEntity>) -> Results<RecommendationEntity> {
         return data
     }
     
-    private func mapDataPopular(_ data: Results<PopularModel>) -> Results<PopularModel> {
+    private func mapDataPopular(_ data: Results<PopularEntity>) -> Results<PopularEntity> {
         return data
     }
     
-    private func mapDataTopRated(_ data: Results<TopRatedModel>) -> Results<TopRatedModel> {
+    private func mapDataTopRated(_ data: Results<TopRatedEntity>) -> Results<TopRatedEntity> {
         return data
     }
     
-    private func mapDataUpcoming(_ data: Results<UpcomingModel>) -> Results<UpcomingModel> {
+    private func mapDataUpcoming(_ data: Results<UpcomingEntity>) -> Results<UpcomingEntity> {
         return data
     }
     

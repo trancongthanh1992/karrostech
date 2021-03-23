@@ -23,7 +23,7 @@ class UpcomingTableViewCell: UITableViewCell, NibReusable {
         }
     }
     
-    var modelSelected: ((UpcomingModel) -> Void)!
+    var modelSelected: ((UpcomingEntity) -> Void)!
     
     lazy var collectionView: UICollectionView = { width, height in
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: collectionViewLayout(width, height))
@@ -74,7 +74,7 @@ extension UpcomingTableViewCell {
             .bind(to: self.viewModel!.loadMoreUpcomingTrigger)
             .disposed(by: disposeBag)
         
-        collectionView.rx.modelSelected(UpcomingModel.self)
+        collectionView.rx.modelSelected(UpcomingEntity.self)
             .subscribe(onNext: { [unowned self] model in
                 self.modelSelected(model)
             })

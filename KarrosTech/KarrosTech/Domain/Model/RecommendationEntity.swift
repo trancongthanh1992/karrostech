@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct RecommendationModel: Codable {
+struct RecommendationEntity: Codable {
     let video: Bool?
     let voteAverage: Double?
     let title, overview, releaseDate: String?

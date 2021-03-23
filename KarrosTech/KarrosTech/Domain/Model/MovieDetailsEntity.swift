@@ -7,22 +7,22 @@
 
 import Foundation
 
-struct MovieDetailsModel: Codable {
+struct MovieDetailsEntity: Codable {
     let adult: Bool?
     let backdropPath: String?
-    let belongsToCollection: BelongsToCollectionModel?
+    let belongsToCollection: BelongsToCollectionEntity?
     let budget: Int?
-    let genres: [GenreModel]?
+    let genres: [GenreEntity]?
     let homepage: String?
     let id: Int?
     let imdbID, originalLanguage, originalTitle, overview: String?
     let popularity: Double?
     let posterPath: String?
-    let productionCompanies: [ProductionCompanyModel]?
-    let productionCountries: [ProductionCountryModel]?
+    let productionCompanies: [ProductionCompanyEntity]?
+    let productionCountries: [ProductionCountryEntity]?
     let releaseDate: String?
     let revenue, runtime: Int?
-    let spokenLanguages: [SpokenLanguageModel]?
+    let spokenLanguages: [SpokenLanguageEntity]?
     let status, tagline, title: String?
     let video: Bool?
     let voteAverage: Double?

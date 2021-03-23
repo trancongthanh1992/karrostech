@@ -17,7 +17,7 @@ enum DetailsSectionDataItem {
     case Rate(ObYourRateModel)
     case Credit(ObCreditsModel)
     case Video(ObResultsVideoModel)
-    case Comment(ReviewModel)
+    case Comment(ReviewEntity)
     case Recommendation(ObResultsRecommendationModel)
 }
 

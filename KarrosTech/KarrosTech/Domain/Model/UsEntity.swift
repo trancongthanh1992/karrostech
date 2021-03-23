@@ -8,7 +8,7 @@
 import Foundation
 
 // MARK: - Us
-struct UsModel: Codable {
+struct UsEntity: Codable {
     let link: String?
-    let rent, flatrate, buy: [BuyModel]?
+    let rent, flatrate, buy: [BuyEntity]?
 }

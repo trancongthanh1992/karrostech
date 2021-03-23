@@ -7,6 +7,6 @@
 
 import Foundation
 
-struct DatesModel: Codable {
+struct DatesEntity: Codable {
     let maximum, minimum: String?
 }

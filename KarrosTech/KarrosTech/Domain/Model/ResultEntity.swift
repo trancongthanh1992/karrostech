@@ -1,15 +1,15 @@
 //
-//  ReviewModel.swift
+//  ResultModel.swift
 //  KarrosTech
 //
-//  Created by Tran Cong Thanh on 3/20/21.
+//  Created by Tran Cong Thanh on 3/14/21.
 //
 
 import Foundation
 
-struct ReviewModel: Codable {
+struct ResultEntity: Codable {
     let author: String?
-    let authorDetails: AuthorDetails?
+    let authorDetails: AuthorDetailsEntity?
     let content, createdAt, id, updatedAt: String?
     let url: String?
 

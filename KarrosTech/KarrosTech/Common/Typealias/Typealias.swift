@@ -11,37 +11,37 @@ import RxCocoa
 import RxDataSources
 
 ///
-typealias ObHomeResultable = Observable<(Results<RecommendationModel>, Genres<GenreModel>, Results<PopularModel>, Results<TopRatedModel>, Results<UpcomingModel>)>
-typealias HomeResultable = (Results<RecommendationModel>, Genres<GenreModel>, Results<PopularModel>, Results<TopRatedModel>, Results<UpcomingModel>)
+typealias ObHomeResultable = Observable<(Results<RecommendationEntity>, Genres<GenreEntity>, Results<PopularEntity>, Results<TopRatedEntity>, Results<UpcomingEntity>)>
+typealias HomeResultable = (Results<RecommendationEntity>, Genres<GenreEntity>, Results<PopularEntity>, Results<TopRatedEntity>, Results<UpcomingEntity>)
 
 ///
 typealias DataSourceHomeSection = RxTableViewSectionedReloadDataSource<HomeSectionData>
 typealias DataSourceDetailsSection = RxTableViewSectionedReloadDataSource<DetailsSectionData>
 
 ///
-typealias ObDetailsResultable = Observable<(MovieDetailsModel, CreditsModel, Results<VideoModel>, Results<ReviewModel>, Results<RecommendationModel>)>
-typealias DetailsResultable = (MovieDetailsModel, CreditsModel, Results<VideoModel>, Results<ReviewModel>, Results<RecommendationModel>)
+typealias ObDetailsResultable = Observable<(MovieDetailsEntity, CreditsEntity, Results<VideoEntity>, Results<ReviewEntity>, Results<RecommendationEntity>)>
+typealias DetailsResultable = (MovieDetailsEntity, CreditsEntity, Results<VideoEntity>, Results<ReviewEntity>, Results<RecommendationEntity>)
 
 
 ///
-typealias ObResultsRecommendationModel = BehaviorRelay<Results<RecommendationModel>>
-typealias ObResultsCategoryModel = BehaviorRelay<Genres<GenreModel>>
-typealias ObResultsPopularModel = BehaviorRelay<Results<PopularModel>>
-typealias ObResultsTopRatedModel = BehaviorRelay<Results<TopRatedModel>>
-typealias ObResultsUpcomingModel = BehaviorRelay<Results<UpcomingModel>>
+typealias ObResultsRecommendationModel = BehaviorRelay<Results<RecommendationEntity>>
+typealias ObResultsCategoryModel = BehaviorRelay<Genres<GenreEntity>>
+typealias ObResultsPopularModel = BehaviorRelay<Results<PopularEntity>>
+typealias ObResultsTopRatedModel = BehaviorRelay<Results<TopRatedEntity>>
+typealias ObResultsUpcomingModel = BehaviorRelay<Results<UpcomingEntity>>
 
 ///
-typealias ResultsRecommendationModel = Results<RecommendationModel>
-typealias ResultsCategoryModel = Genres<GenreModel>
-typealias ResultsPopularModel = Results<PopularModel>
-typealias ResultsTopRatedModel = Results<TopRatedModel>
-typealias ResultsUpcomingModel = Results<UpcomingModel>
-typealias ResultsReviewModel = Results<ReviewModel>
+typealias ResultsRecommendationModel = Results<RecommendationEntity>
+typealias ResultsCategoryModel = Genres<GenreEntity>
+typealias ResultsPopularModel = Results<PopularEntity>
+typealias ResultsTopRatedModel = Results<TopRatedEntity>
+typealias ResultsUpcomingModel = Results<UpcomingEntity>
+typealias ResultsReviewModel = Results<ReviewEntity>
 
 ///
-typealias ObMovieDetailsModel = Observable<MovieDetailsModel>
-typealias ObYourRateModel = Observable<YourRateModel>
-typealias ObCreditsModel = Observable<CreditsModel>
-typealias ObResultsVideoModel = Observable<Results<VideoModel>>
-typealias ObResultsCommentModel = Observable<Results<ReviewModel>>
+typealias ObMovieDetailsModel = Observable<MovieDetailsEntity>
+typealias ObYourRateModel = Observable<YourRateEntity>
+typealias ObCreditsModel = Observable<CreditsEntity>
+typealias ObResultsVideoModel = Observable<Results<VideoEntity>>
+typealias ObResultsCommentModel = Observable<Results<ReviewEntity>>
 typealias ObResultWatchProvider = Observable<ResultWatchProvider>

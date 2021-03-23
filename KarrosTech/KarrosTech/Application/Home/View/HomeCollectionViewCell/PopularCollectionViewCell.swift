@@ -16,7 +16,7 @@ class PopularCollectionViewCell: UICollectionViewCell, NibReusable {
     
     private var disposeBag: DisposeBag!
     
-    var model: PopularModel! {
+    var model: PopularEntity! {
         didSet {
             bindingModel(model)
         }
@@ -39,7 +39,7 @@ class PopularCollectionViewCell: UICollectionViewCell, NibReusable {
         self.containerView.imageView.kf.cancelDownloadTask()
     }
     
-    private func bindingModel(_ model: PopularModel) -> Void {
+    private func bindingModel(_ model: PopularEntity) -> Void {
         self.containerView.title.text = model.title
         guard let posterPath = model.posterPath else { return }
         let url = URL(string: "https://image.tmdb.org/t/p/w300\(posterPath)")

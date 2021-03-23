@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct CreditsModel: Codable {
+struct CreditsEntity: Codable {
     let id: Int?
     let cast, crew: [Cast]?
 }

@@ -1,5 +1,5 @@
 //
-//  Result.swift
+//  UpcomingModel.swift
 //  KarrosTech
 //
 //  Created by Tran Cong Thanh on 3/13/21.
@@ -7,12 +7,13 @@
 
 import Foundation
 
-struct PopularModel: Codable {
+struct UpcomingEntity: Codable {
     let adult: Bool?
     let backdropPath: String?
     let genreIDS: [Int]?
     let id: Int?
-    let originalLanguage, originalTitle, overview: String?
+    let originalLanguage: String?
+    let originalTitle, overview: String?
     let popularity: Double?
     let posterPath, releaseDate, title: String?
     let video: Bool?

@@ -17,7 +17,7 @@ class RecommendationCollectionViewCell: UICollectionViewCell, NibReusable {
     
     private var disposeBag: DisposeBag!
     
-    var model: RecommendationModel! {
+    var model: RecommendationEntity! {
         didSet {
             bindingModel(model)
         }
@@ -39,7 +39,7 @@ class RecommendationCollectionViewCell: UICollectionViewCell, NibReusable {
         self.imageView.applyshadowWithCorner(containerView: shadowView)
     }
     
-    private func bindingModel(_ model: RecommendationModel) -> Void {
+    private func bindingModel(_ model: RecommendationEntity) -> Void {
         guard let backdropPath = model.backdropPath else { return }
         let url = URL(string: "https://image.tmdb.org/t/p/w300\(backdropPath)")
         self.imageView.kf.setImage(with: url)

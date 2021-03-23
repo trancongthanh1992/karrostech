@@ -9,10 +9,10 @@ import Foundation
 
 struct Genres<Model: Codable>: Codable {
 
-    let genres: [GenreModel]?
+    let genres: [GenreEntity]?
         
 }
 
-extension Genres where Model == GenreModel{
+extension Genres where Model == GenreEntity{
     
 }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ProductionCountryModel: Codable {
+struct ProductionCountryEntity: Codable {
     let iso3166_1, name: String?
 
     enum CodingKeys: String, CodingKey {

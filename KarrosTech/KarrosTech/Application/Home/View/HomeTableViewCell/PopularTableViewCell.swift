@@ -23,7 +23,7 @@ class PopularTableViewCell: UITableViewCell, NibReusable {
         }
     }
     
-    var modelSelected: ((PopularModel) -> Void)!
+    var modelSelected: ((PopularEntity) -> Void)!
     
     lazy var collectionView: UICollectionView = { width, height in
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: collectionViewLayout(width, height))
@@ -74,7 +74,7 @@ extension PopularTableViewCell {
             .bind(to: self.viewModel!.loadMorePopularTrigger)
             .disposed(by: disposeBag)
         
-        collectionView.rx.modelSelected(PopularModel.self)
+        collectionView.rx.modelSelected(PopularEntity.self)
             .subscribe(onNext: { [unowned self] model in
                 self.modelSelected(model)
             })

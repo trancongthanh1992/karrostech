@@ -1,5 +1,5 @@
 //
-//  TopRatedModel.swift
+//  Result.swift
 //  KarrosTech
 //
 //  Created by Tran Cong Thanh on 3/13/21.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct TopRatedModel: Codable {
+struct PopularEntity: Codable {
     let adult: Bool?
     let backdropPath: String?
     let genreIDS: [Int]?

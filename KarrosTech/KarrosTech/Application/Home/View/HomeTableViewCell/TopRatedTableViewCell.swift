@@ -23,7 +23,7 @@ class TopRatedTableViewCell: UITableViewCell, NibReusable {
         }
     }
     
-    var modelSelected: ((TopRatedModel) -> Void)!
+    var modelSelected: ((TopRatedEntity) -> Void)!
     
     lazy var collectionView: UICollectionView = { width, height in
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: collectionViewLayout(width, height))
@@ -75,7 +75,7 @@ extension TopRatedTableViewCell {
             .bind(to: self.viewModel!.loadMoreTopRatedTrigger)
             .disposed(by: disposeBag)
         
-        collectionView.rx.modelSelected(TopRatedModel.self)
+        collectionView.rx.modelSelected(TopRatedEntity.self)
             .subscribe(onNext: { [unowned self] model in
                 self.modelSelected(model)
             })

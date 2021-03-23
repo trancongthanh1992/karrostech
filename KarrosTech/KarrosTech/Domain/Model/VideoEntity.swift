@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct VideoModel: Codable {
+struct VideoEntity: Codable {
     let id, iso639_1, iso3166_1, key: String?
     let name, site: String?
     let size: Int?

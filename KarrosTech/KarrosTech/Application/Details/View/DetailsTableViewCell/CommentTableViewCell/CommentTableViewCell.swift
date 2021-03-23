@@ -16,7 +16,7 @@ class CommentTableViewCell: UITableViewCell, NibReusable {
     
     var viewModel: DetailsViewModel!
     
-    var model: ReviewModel! {
+    var model: ReviewEntity! {
         didSet {
 //            self.bindCollectionView(model)
         }
@@ -37,7 +37,7 @@ class CommentTableViewCell: UITableViewCell, NibReusable {
 
 extension CommentTableViewCell {
     
-    private func bind(_ model: ReviewModel) {
+    private func bind(_ model: ReviewEntity) {
         
     }
 }

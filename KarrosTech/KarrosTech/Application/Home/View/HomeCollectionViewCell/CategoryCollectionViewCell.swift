@@ -18,7 +18,7 @@ class CategoryCollectionViewCell: UICollectionViewCell, NibReusable {
  
     private var disposeBag: DisposeBag!
     
-    var model: GenreModel! {
+    var model: GenreEntity! {
         didSet {
             bindingModel(model)
         }
@@ -42,7 +42,7 @@ class CategoryCollectionViewCell: UICollectionViewCell, NibReusable {
         self.shadowView.applyshadowWithCorner(cornerRadius: 6)
     }
     
-    private func bindingModel(_ model: GenreModel) -> Void {
+    private func bindingModel(_ model: GenreEntity) -> Void {
         title.text = model.name
     }
     

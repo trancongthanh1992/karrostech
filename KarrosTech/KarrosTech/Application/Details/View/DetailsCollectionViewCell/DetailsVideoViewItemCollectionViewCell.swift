@@ -21,7 +21,7 @@ class DetailsVideoViewItemCollectionViewCell: UICollectionViewCell, NibReusable 
     var avPlayer = AVPlayer()
     var avPlayerLayer = AVPlayerLayer()
     
-    var model: VideoModel! {
+    var model: VideoEntity! {
         didSet {
             bindingModel(model)
         }
@@ -38,7 +38,7 @@ class DetailsVideoViewItemCollectionViewCell: UICollectionViewCell, NibReusable 
     }
 
     
-    private func bindingModel(_ model: VideoModel) -> Void {
+    private func bindingModel(_ model: VideoEntity) -> Void {
 //        guard let profilePath = model.profilePath else { return }
 //        let url = URL(string: "https://image.tmdb.org/t/p/w300\(profilePath)")
 //        self.containerView.imageView.kf.setImage(with: url)

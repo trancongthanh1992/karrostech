@@ -10,7 +10,7 @@ import Foundation
 // MARK: - Welcome
 struct Results<Model: Codable>: Codable {
     var id: Int?
-    var dates: DatesModel?
+    var dates: DatesEntity?
     var page: Int?
     var results: [Model]?
     var totalPages, totalResults: Int?
@@ -27,7 +27,7 @@ struct Results<Model: Codable>: Codable {
 
 struct Result<Model: Codable>: Codable {
     var id: Int?
-    var dates: DatesModel?
+    var dates: DatesEntity?
     var page: Int?
     var results: Model?
     var totalPages, totalResults: Int?
@@ -44,9 +44,9 @@ struct Result<Model: Codable>: Codable {
 
 struct ResultWatchProvider: Codable {
     var id: Int?
-    var dates: DatesModel?
+    var dates: DatesEntity?
     var page: Int?
-    var results: WatchProviderModel?
+    var results: WatchProviderEntity?
     var totalPages, totalResults: Int?
     
 
