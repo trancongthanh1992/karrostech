@@ -11,7 +11,7 @@ import RxSwift
 import RxSwiftExt
 
 protocol TheMovieDbRemotable {
-    var provider: MoyaProvider<TheMovieDbService> { get }
+    var provider: MoyaProvider<NetworkService> { get }
     
     func fetchRecommendations(movieId: Int, page: Int) -> Observable<Results<RecommendationEntity>>
     func fetchCategory(page: Int) -> Observable<Genres<GenreEntity>>
@@ -29,7 +29,7 @@ protocol TheMovieDbRemotable {
 
 class TheMovieDbRemote: TheMovieDbRemotable {
 
-    var provider =  MoyaProvider<TheMovieDbService>(plugins: [NetworkLoggerPlugin()])
+    var provider =  MoyaProvider<NetworkService>(plugins: [NetworkLoggerPlugin()])
     
     func fetchRecommendations(movieId: Int, page: Int) -> Observable<Results<RecommendationEntity>> {
         provider

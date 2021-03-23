@@ -1,5 +1,5 @@
 //
-//  TheMovieDbService.swift
+//  NetworkService.swift
 //  KarrosTech
 //
 //  Created by Tran Cong Thanh on 3/13/21.
@@ -11,7 +11,7 @@ import Moya
 let apiKey = "438fea3c2c223596a2aa1b8de0828d19"
 let language = "en-US"
 
-public enum TheMovieDbService {
+public enum NetworkService {
     case recommendations(movieId: Int, page: Int)
     case category(page: Int)
     case popular(page: Int)
@@ -27,7 +27,7 @@ public enum TheMovieDbService {
     case detailsWatchProviders(movieId: Int)
 }
 
-extension TheMovieDbService: TargetType {
+extension NetworkService: TargetType {
 
     public var baseURL: URL { URL(string: "https://api.themoviedb.org")! }
     
