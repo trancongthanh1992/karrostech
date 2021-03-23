@@ -8,11 +8,11 @@
 import Foundation
 
 // MARK: - Welcome
-struct Results<Model: Codable>: Codable {
+struct Results<Entity: Codable>: Codable {
     var id: Int?
     var dates: DatesEntity?
     var page: Int?
-    var results: [Model]?
+    var results: [Entity]?
     var totalPages, totalResults: Int?
     
 
