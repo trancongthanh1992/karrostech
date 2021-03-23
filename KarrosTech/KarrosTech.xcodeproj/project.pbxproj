@@ -602,7 +602,7 @@
 			isa = PBXGroup;
 			children = (
 				FDB0BCB3260A148400EAC6FD /* UseCase */,
-				FDF12C7025FCA84C00136287 /* Model */,
+				FDF12C7025FCA84C00136287 /* Entity */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -703,7 +703,7 @@
 			path = Application;
 			sourceTree = "<group>";
 		};
-		FDF12C7025FCA84C00136287 /* Model */ = {
+		FDF12C7025FCA84C00136287 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
 				FD52768325FDE68500839EB9 /* Generic */,
@@ -728,7 +728,7 @@
 				FD531E56260795EA0007F59E /* UsEntity.swift */,
 				FD531E5A260799940007F59E /* WatchProviderEntity.swift */,
 			);
-			path = Model;
+			path = Entity;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
