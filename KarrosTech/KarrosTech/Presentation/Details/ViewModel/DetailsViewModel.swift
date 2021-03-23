@@ -11,14 +11,6 @@ import RxOptional
 import RxSwiftExt
 import RxCocoa
 
-protocol DetailsUseCaseType {
-    var repository: TheMovieDbRepositoryType { get set }
-}
-
-struct DetailsUseCase: DetailsUseCaseType {
-    var repository: TheMovieDbRepositoryType
-}
-
 class DetailsViewModel {
     
     
@@ -48,8 +40,8 @@ class DetailsViewModel {
         
         let resultData = firstLoadTrigger
             .flatMapLatest { movieId in
-                return useCase.repository
-                    .getDetails(movieId: movieId, page: 1)
+                return useCase
+                    .getDetails(movieId: movieId)
             }
         
         resultData

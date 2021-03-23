@@ -6,7 +6,22 @@
 //
 
 import Foundation
+import Moya
+import RxSwift
 
-//protocol DetailsUseCaseType {
-//    
-//}
+protocol DetailsUseCase {
+    func getDetails(movieId: Int) -> ObDetailsResultable
+}
+
+class DetailsUseCaseImpl: DetailsUseCase {
+    
+    let repository: DetailsRepository
+    
+    init(repository: DetailsRepository) {
+        self.repository = repository
+    }
+    
+    func getDetails(movieId: Int) -> ObDetailsResultable {
+        repository.getDetails(movieId: movieId)
+    }    
+}

@@ -25,7 +25,7 @@ class HomeViewController: UIViewController {
     let pageLoadMorePopular = PublishSubject<Pagable>()
     let pageLoadMoreTopRated = PublishSubject<Pagable>()
     let pageLoadMoreUpcoming = PublishSubject<Pagable>()
-    let pageLoadMoreRecommendation = PublishSubject<Pagable>()
+    let pageLoadMoreTrending = PublishSubject<Pagable>()
     
     ///
     //    var input: HomeViewModel.Input!
@@ -45,17 +45,18 @@ class HomeViewController: UIViewController {
             .controlEvent(UIControlEvents.valueChanged)
             .asObservable()
         
+        
         ///
-        let homeRemote = TheMovieDbRemote()
-        let homeLocal = TheMovieDbLocal()
-        let homeRepository = TheMovieDbRepository(remote: homeRemote, local: homeLocal)
-        let homeUseCase = HomeUseCase(repository: homeRepository)
+        let homeRemote = HomeRemoteImpl()
+        let homeLocal = HomeLocalImpl()
+        let homeRepository = HomeRepositoryImpl(remote: homeRemote, local: homeLocal)
+        let homeUseCase = HomeUseCaseImpl(repository: homeRepository)
 
         ///
         viewModel = HomeViewModel(useCase: homeUseCase,
                                   firstLoadTrigger: Observable<Void>.just(()),
                                   pullToRefreshTrigger: pullToRefresh,
-                                  loadMoreRecommendationTrigger: pageLoadMoreRecommendation,
+                                  loadMoreTrendingTrigger: pageLoadMoreTrending,
                                   loadMorePopularTrigger: pageLoadMorePopular,
                                   loadMoreTopRatedTrigger: pageLoadMoreTopRated,
                                   loadMoreUpcomingTrigger: pageLoadMoreUpcoming

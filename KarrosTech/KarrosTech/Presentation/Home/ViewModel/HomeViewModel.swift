@@ -9,23 +9,15 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-protocol HomeUseCaseType {
-    var repository: TheMovieDbRepositoryType { get set }
-}
-
-struct HomeUseCase: HomeUseCaseType {
-    var repository: TheMovieDbRepositoryType
-}
-
 class HomeViewModel {
     
-    let useCase: HomeUseCaseType
+    let useCase: HomeUseCase
     private let dispose = DisposeBag()
     
     // Input
     let firstLoadTrigger: Observable<Void>
     let pullToRefreshTrigger: Observable<Void>
-    let loadMoreRecommendationTrigger: PublishSubject<Pagable>
+    let loadMoreTrendingTrigger: PublishSubject<Pagable>
     let loadMorePopularTrigger: PublishSubject<Pagable>
     let loadMoreTopRatedTrigger: PublishSubject<Pagable>
     let loadMoreUpcomingTrigger: PublishSubject<Pagable>
@@ -34,10 +26,10 @@ class HomeViewModel {
     var homeSectionData: BehaviorRelay<[HomeSectionData]> = BehaviorRelay(value: [HomeSectionData]())
     let isEndLoading = PublishSubject<Bool>()
     
-    init(useCase: HomeUseCaseType,
+    init(useCase: HomeUseCase,
          firstLoadTrigger: Observable<Void>,
          pullToRefreshTrigger: Observable<Void>,
-         loadMoreRecommendationTrigger: PublishSubject<Pagable>,
+         loadMoreTrendingTrigger: PublishSubject<Pagable>,
          loadMorePopularTrigger: PublishSubject<Pagable>,
          loadMoreTopRatedTrigger: PublishSubject<Pagable>,
          loadMoreUpcomingTrigger: PublishSubject<Pagable>) {
@@ -45,15 +37,14 @@ class HomeViewModel {
         self.useCase = useCase
         self.firstLoadTrigger = firstLoadTrigger
         self.pullToRefreshTrigger = pullToRefreshTrigger
-        self.loadMoreRecommendationTrigger = loadMoreRecommendationTrigger
+        self.loadMoreTrendingTrigger = loadMoreTrendingTrigger
         self.loadMorePopularTrigger = loadMorePopularTrigger
         self.loadMoreTopRatedTrigger = loadMoreTopRatedTrigger
         self.loadMoreUpcomingTrigger = loadMoreUpcomingTrigger
         
         let resultData = Observable.merge(firstLoadTrigger, pullToRefreshTrigger)
             .flatMapLatest { _ in
-                return useCase.repository
-                    .getHomeRepository(movieId: 299536, page: 1)
+                return useCase.getHome(page: 1)
             }
         
         resultData
@@ -67,17 +58,15 @@ class HomeViewModel {
             .disposed(by: dispose)
         
         
-        loadMoreRecommendationTrigger
+        loadMoreTrendingTrigger
             .filter({ $0.page < $0.total })
             .flatMapFirst { (e)  in
-                return useCase
-                    .repository
-                    .getLoadMoreRecommendations(movieId: 299536, page: (e.page + 1))
+                return useCase.loadMoreTrending(page: (e.page + 1))
             }
             .withLatestFrom(homeSectionData, resultSelector: { (resultApiData: $0, resultHomeData: $1) })
             .subscribe (onNext: { data in
-                if case let .Recommendation(dataModel) = data.resultHomeData[0].items[0] {
-                    var pageData = Results<RecommendationEntity>()
+                if case let .Trending(dataModel) = data.resultHomeData[0].items[0] {
+                    var pageData = Results<TrendingEntity>()
                     pageData.page = data.resultApiData.page
                     pageData.totalPages = data.resultApiData.totalPages
                     pageData.results = dataModel.value.results! + data.resultApiData.results!
@@ -88,9 +77,7 @@ class HomeViewModel {
         loadMorePopularTrigger
             .filter({ $0.page < $0.total })
             .flatMapFirst { e in
-                return useCase
-                    .repository
-                    .getLoadMorePopular(page: (e.page + 1))
+                return useCase.loadMorePopular(page: (e.page + 1))
             }
             .withLatestFrom(homeSectionData, resultSelector: { (resultApiData: $0, resultHomeData: $1) })
             .subscribe (onNext: { data in
@@ -107,9 +94,7 @@ class HomeViewModel {
         loadMoreTopRatedTrigger
             .filter({ $0.page < $0.total })
             .flatMapFirst { e in
-                return useCase
-                    .repository
-                    .getLoadMoreTopRated(page: (e.page + 1))
+                return useCase.loadMoreTopRated(page: (e.page + 1))
             }
             .withLatestFrom(homeSectionData, resultSelector: { (resultApiData: $0, resultHomeData: $1) })
             .subscribe (onNext: { data in
@@ -126,9 +111,7 @@ class HomeViewModel {
         loadMoreUpcomingTrigger
             .filter({ $0.page < $0.total })
             .flatMapFirst { e in
-                return useCase
-                    .repository
-                    .getLoadMoreUpcoming(page: (e.page + 1))
+                return useCase.loadMoreUpcoming(page: (e.page + 1))
             }
             .withLatestFrom(homeSectionData, resultSelector: { (resultApiData: $0, resultHomeData: $1) })
             .subscribe (onNext: { data in
@@ -161,7 +144,7 @@ class HomeViewModel {
     }
     
     private func mapData(_ data: HomeResultable) -> [HomeSectionData] {
-        let recommendationItems = HomeSectionDataItem.Recommendation(BehaviorRelay(value: data.0))
+        let recommendationItems = HomeSectionDataItem.Trending(BehaviorRelay(value: data.0))
         let categoryItems = HomeSectionDataItem.Category(BehaviorRelay(value: data.1))
         let popularItems = HomeSectionDataItem.Popular(BehaviorRelay(value: data.2))
         let topRatedItems = HomeSectionDataItem.TopRated(BehaviorRelay(value: data.3))

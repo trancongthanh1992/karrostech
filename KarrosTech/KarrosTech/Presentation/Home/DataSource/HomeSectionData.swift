@@ -13,7 +13,7 @@ import UIKit
 import Reusable
 
 enum HomeSectionDataItem {
-    case Recommendation(ObResultsRecommendationModel)
+    case Trending(ObResultsTrendingModel)
     case Category(ObResultsCategoryModel)
     case Popular(ObResultsPopularModel)
     case TopRated(ObResultsTopRatedModel)
@@ -41,7 +41,7 @@ struct HomeDataSource {
     static func dataSource(viewModel: HomeViewModel, navigationController: UINavigationController) -> DataSourceHomeSection {
         return .init(configureCell: { dataSource, tableView, indexPath, item -> UITableViewCell in
             switch item {
-            case let .Recommendation(model):
+            case let .Trending(model):
                 let cell = tableView.dequeueReusableCell(for: indexPath) as RecommendationTableViewCell
                 cell.viewModel = viewModel
                 cell.modelSelected = { model in

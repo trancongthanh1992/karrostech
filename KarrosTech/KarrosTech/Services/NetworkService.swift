@@ -12,7 +12,7 @@ let apiKey = "438fea3c2c223596a2aa1b8de0828d19"
 let language = "en-US"
 
 public enum NetworkService {
-    case recommendations(movieId: Int, page: Int)
+    case trending(page: Int)
     case category(page: Int)
     case popular(page: Int)
     case topRated(page: Int)
@@ -25,6 +25,7 @@ public enum NetworkService {
     case detailsReview(movieId: Int)
     case detailsSimilar(movieId: Int)
     case detailsWatchProviders(movieId: Int)
+    case detailsRecommendations(movieId: Int)
 }
 
 extension NetworkService: TargetType {
@@ -33,8 +34,8 @@ extension NetworkService: TargetType {
     
     public var path: String {
         switch self {
-        case let .recommendations(movieId, _):
-            return "/3/movie/\(movieId)/recommendations"
+        case .trending(_):
+            return "/3/trending/all/week"
         case .category(_):
             return "/3/genre/tv/list"
         case .popular(_):
@@ -57,12 +58,14 @@ extension NetworkService: TargetType {
             return "/3/movie/\(movieId)/similar"
         case let .detailsWatchProviders(movieId: movieId):
             return "/3/movie/\(movieId)/watch/providers"
+        case let .detailsRecommendations(movieId: movieId):
+            return "/3/movie/\(movieId)/recommendations"
         }
     }
     
     public var task: Task {
         switch self {
-        case let .recommendations(_, page):
+        case let .trending(page):
             return .requestParameters(
                 parameters: ["api_key" : apiKey, "language": language, "page": page],
                 encoding: URLEncoding.queryString
@@ -117,13 +120,18 @@ extension NetworkService: TargetType {
                 parameters: ["api_key" : apiKey, "language": language],
                 encoding: URLEncoding.queryString
             )
+        case .detailsRecommendations(_):
+            return .requestParameters(
+                parameters: ["api_key" : apiKey, "language": language],
+                encoding: URLEncoding.queryString
+            )
         }
         
     }
     
     public var method: Moya.Method {
         switch self {
-        case .recommendations,
+        case .trending,
              .category,
              .popular,
              .topRated,
@@ -133,7 +141,8 @@ extension NetworkService: TargetType {
              .detailsReview,
              .detailsCredits,
              .detailsSimilar,
-             .detailsWatchProviders:
+             .detailsWatchProviders,
+             .detailsRecommendations:
             return .get
         }
     }

@@ -34,10 +34,10 @@ class DetailsViewController: UIViewController, StoryboardSceneBased {
         
         configTableView()
         
-        let remote = TheMovieDbRemote()
-        let rocal = TheMovieDbLocal()
-        let repository = TheMovieDbRepository(remote: remote, local: rocal)
-        let useCase = DetailsUseCase(repository: repository)
+        let remote = DetailsRemoteImlp()
+        let local = DetailsLocalImpl()
+        let repository = DetailsRepositoryImpl(remote: remote, local: local)
+        let useCase = DetailsUseCaseImpl(repository: repository)
         
         ///
         viewModel = DetailsViewModel(useCase: useCase,
@@ -127,6 +127,10 @@ extension DetailsViewController: UITableViewDelegate {
             return 0
         }
         return 60
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 0
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {

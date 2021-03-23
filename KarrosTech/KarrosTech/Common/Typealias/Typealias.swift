@@ -11,8 +11,8 @@ import RxCocoa
 import RxDataSources
 
 ///
-typealias ObHomeResultable = Observable<(Results<RecommendationEntity>, Genres<GenreEntity>, Results<PopularEntity>, Results<TopRatedEntity>, Results<UpcomingEntity>)>
-typealias HomeResultable = (Results<RecommendationEntity>, Genres<GenreEntity>, Results<PopularEntity>, Results<TopRatedEntity>, Results<UpcomingEntity>)
+typealias ObHomeResultable = Observable<(Results<TrendingEntity>, Genres<GenreEntity>, Results<PopularEntity>, Results<TopRatedEntity>, Results<UpcomingEntity>)>
+typealias HomeResultable = (Results<TrendingEntity>, Genres<GenreEntity>, Results<PopularEntity>, Results<TopRatedEntity>, Results<UpcomingEntity>)
 
 ///
 typealias DataSourceHomeSection = RxTableViewSectionedReloadDataSource<HomeSectionData>
@@ -24,6 +24,7 @@ typealias DetailsResultable = (MovieDetailsEntity, CreditsEntity, Results<VideoE
 
 
 ///
+typealias ObResultsTrendingModel = BehaviorRelay<Results<TrendingEntity>>
 typealias ObResultsRecommendationModel = BehaviorRelay<Results<RecommendationEntity>>
 typealias ObResultsCategoryModel = BehaviorRelay<Genres<GenreEntity>>
 typealias ObResultsPopularModel = BehaviorRelay<Results<PopularEntity>>
@@ -44,4 +45,4 @@ typealias ObYourRateModel = Observable<YourRateEntity>
 typealias ObCreditsModel = Observable<CreditsEntity>
 typealias ObResultsVideoModel = Observable<Results<VideoEntity>>
 typealias ObResultsCommentModel = Observable<Results<ReviewEntity>>
-typealias ObResultWatchProvider = Observable<ResultWatchProvider>
+typealias ObResultWatchProvider = Observable<ResultWatchProviderEntity>

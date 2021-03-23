@@ -42,7 +42,7 @@ struct Result<Model: Codable>: Codable {
     }
 }
 
-struct ResultWatchProvider: Codable {
+struct ResultWatchProviderEntity: Codable {
     var id: Int?
     var dates: DatesEntity?
     var page: Int?
