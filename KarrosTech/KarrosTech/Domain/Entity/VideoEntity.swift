@@ -12,6 +12,7 @@ struct VideoEntity: Codable {
     let name, site: String?
     let size: Int?
     let type: String?
+    var isPlay = false
 
     enum CodingKeys: String, CodingKey {
         case id

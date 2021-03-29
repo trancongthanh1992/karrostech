@@ -80,6 +80,7 @@ extension DetailsViewController {
         tableView.estimatedRowHeight = 90
         tableView.rowHeight = UITableView.automaticDimension
         tableView.separatorColor = UIColor.clear
+        tableView.contentInset = .init(top: 0, left: 0, bottom: 0, right: 0)
         tableView.addSubview(refreshHandler)
         
         if #available(iOS 11.0, *) {
@@ -140,3 +141,50 @@ extension DetailsViewController: UITableViewDelegate {
         return headerSectionView
     }
 }
+
+
+
+//func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+//
+//    if(velocity.y>0) {
+//        //Code will work without the animation block.I am using animation block incase if you want to set any delay to it.
+//        UIView.animate(withDuration: 2.5, delay: 0, options: UIViewAnimationOptions(), animations: {
+//            self.navigationController?.setNavigationBarHidden(true, animated: true)
+//            self.navigationController?.setToolbarHidden(true, animated: true)
+//            print("Hide")
+//        }, completion: nil)
+//
+//    } else {
+//        UIView.animate(withDuration: 2.5, delay: 0, options: UIViewAnimationOptions(), animations: {
+//            self.navigationController?.setNavigationBarHidden(false, animated: true)
+//            self.navigationController?.setToolbarHidden(false, animated: true)
+//            print("Unhide")
+//        }, completion: nil)
+//      }
+//   }
+
+
+//func scrollViewWillBeginDecelerating(_ scrollView: UIScrollView) {
+//   if scrollView.panGestureRecognizer.translation(in: scrollView).y < 0 {
+//      navigationController?.setNavigationBarHidden(true, animated: true)
+//
+//   } else {
+//      navigationController?.setNavigationBarHidden(false, animated: true)
+//   }
+//}
+
+
+
+//- (void)scrollViewDidScroll: (UIScrollView *)scroll {
+//    // UITableView only moves in one direction, y axis
+//    CGFloat currentOffset = scroll.contentOffset.y;
+//    CGFloat maximumOffset = scroll.contentSize.height - scroll.frame.size.height;
+//
+//    // Change 10.0 to adjust the distance from bottom
+//    if (maximumOffset - currentOffset <= 10.0) {
+//        self.navigationController?.hidden = YES;
+//    }
+//    else{
+//        self.navigationController?.hidden = NO;
+//    }
+//}

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A8D8151947B397B646F5B804 /* libPods-KarrosTechTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 69F2E07947816CEE9AB008EC /* libPods-KarrosTechTests.a */; };
 		D23741DE442F2B7E51AD2A04 /* Pods_KarrosTech.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89CBD9BBA17FF2F27C23516C /* Pods_KarrosTech.framework */; };
 		FD0D061F25FB9EFE00A31015 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0D061E25FB9EFE00A31015 /* AppDelegate.swift */; };
 		FD0D062125FB9EFE00A31015 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0D062025FB9EFE00A31015 /* SceneDelegate.swift */; };
@@ -48,6 +49,7 @@
 		FD15EBB626048F0F005285D8 /* UpcomingCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD15EBB426048F0F005285D8 /* UpcomingCollectionViewCell.xib */; };
 		FD15EBBA26048FC2005285D8 /* TypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD15EBB926048FC2005285D8 /* TypeView.swift */; };
 		FD15EBBD26048FCE005285D8 /* TypeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD15EBBC26048FCE005285D8 /* TypeView.xib */; };
+		FD1D85A42610503D00052AE1 /* RelativeDatetime.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD1D85A32610503D00052AE1 /* RelativeDatetime.swift */; };
 		FD52767625FDE4A800839EB9 /* SpokenLanguageEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD52767525FDE4A800839EB9 /* SpokenLanguageEntity.swift */; };
 		FD52767925FDE4CC00839EB9 /* ProductionCountryEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD52767825FDE4CC00839EB9 /* ProductionCountryEntity.swift */; };
 		FD52767C25FDE4E600839EB9 /* ProductionCompanyEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD52767B25FDE4E600839EB9 /* ProductionCompanyEntity.swift */; };
@@ -86,6 +88,8 @@
 		FD531E5B260799940007F59E /* WatchProviderEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD531E5A260799940007F59E /* WatchProviderEntity.swift */; };
 		FD531E602608F2CE0007F59E /* TagViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD531E5F2608F2CE0007F59E /* TagViewItem.swift */; };
 		FD531E642608F2DF0007F59E /* TagViewItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD531E632608F2DF0007F59E /* TagViewItem.xib */; };
+		FD617E112611BFA200581038 /* DetailsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD617E102611BFA200581038 /* DetailsHeaderView.swift */; };
+		FD617E192611BFBC00581038 /* DetailsHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD617E182611BFBC00581038 /* DetailsHeaderView.xib */; };
 		FD71A22F26004B2300D91539 /* BindableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD71A22E26004B2300D91539 /* BindableType.swift */; };
 		FD71A2512600810C00D91539 /* Navigation+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD71A2502600810C00D91539 /* Navigation+Extension.swift */; };
 		FD71A295260110A300D91539 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD71A293260110A300D91539 /* CategoryCollectionViewCell.swift */; };
@@ -104,6 +108,7 @@
 		FDB0BCF4260A42C500EAC6FD /* HomeLocal.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB0BCF3260A42C500EAC6FD /* HomeLocal.swift */; };
 		FDB0BCF7260A42D000EAC6FD /* DetailsLocal.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB0BCF6260A42D000EAC6FD /* DetailsLocal.swift */; };
 		FDB0BCFD260A493C00EAC6FD /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB0BCFC260A493C00EAC6FD /* Model.swift */; };
+		FDB0BD09260A5EBF00EAC6FD /* KarrosTechTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB0BD08260A5EBF00EAC6FD /* KarrosTechTests.swift */; };
 		FDB5B2AF2601D48000594057 /* ReachedScroll.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB5B2AE2601D48000594057 /* ReachedScroll.swift */; };
 		FDB5B2C12603A66000594057 /* Utils+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB5B2C02603A66000594057 /* Utils+Extension.swift */; };
 		FDF12C3125FC60F800136287 /* DetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF12C3025FC60F800136287 /* DetailsViewModel.swift */; };
@@ -121,8 +126,21 @@
 		FDF12C9625FCB63D00136287 /* GenreEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF12C9525FCB63D00136287 /* GenreEntity.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		FDB0BD0B260A5EBF00EAC6FD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FD0D061325FB9EFE00A31015 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FD0D061A25FB9EFE00A31015;
+			remoteInfo = KarrosTech;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		13621BEE1F4072C662C772C7 /* Pods-KarrosTechTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KarrosTechTests.release.xcconfig"; path = "Target Support Files/Pods-KarrosTechTests/Pods-KarrosTechTests.release.xcconfig"; sourceTree = "<group>"; };
+		334A8116485354E8459F3099 /* Pods-KarrosTechTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KarrosTechTests.debug.xcconfig"; path = "Target Support Files/Pods-KarrosTechTests/Pods-KarrosTechTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4F348519EB77D5F1CE552EA3 /* Pods-KarrosTech.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KarrosTech.release.xcconfig"; path = "Target Support Files/Pods-KarrosTech/Pods-KarrosTech.release.xcconfig"; sourceTree = "<group>"; };
+		69F2E07947816CEE9AB008EC /* libPods-KarrosTechTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KarrosTechTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		89CBD9BBA17FF2F27C23516C /* Pods_KarrosTech.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KarrosTech.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA866CA104B1A4BE56F91886 /* Pods-KarrosTech.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KarrosTech.debug.xcconfig"; path = "Target Support Files/Pods-KarrosTech/Pods-KarrosTech.debug.xcconfig"; sourceTree = "<group>"; };
 		FD0D061B25FB9EFE00A31015 /* KarrosTech.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KarrosTech.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -167,6 +185,7 @@
 		FD15EBB426048F0F005285D8 /* UpcomingCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UpcomingCollectionViewCell.xib; sourceTree = "<group>"; };
 		FD15EBB926048FC2005285D8 /* TypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeView.swift; sourceTree = "<group>"; };
 		FD15EBBC26048FCE005285D8 /* TypeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TypeView.xib; sourceTree = "<group>"; };
+		FD1D85A32610503D00052AE1 /* RelativeDatetime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelativeDatetime.swift; sourceTree = "<group>"; };
 		FD52767525FDE4A800839EB9 /* SpokenLanguageEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpokenLanguageEntity.swift; sourceTree = "<group>"; };
 		FD52767825FDE4CC00839EB9 /* ProductionCountryEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductionCountryEntity.swift; sourceTree = "<group>"; };
 		FD52767B25FDE4E600839EB9 /* ProductionCompanyEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductionCompanyEntity.swift; sourceTree = "<group>"; };
@@ -205,6 +224,8 @@
 		FD531E5A260799940007F59E /* WatchProviderEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchProviderEntity.swift; sourceTree = "<group>"; };
 		FD531E5F2608F2CE0007F59E /* TagViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagViewItem.swift; sourceTree = "<group>"; };
 		FD531E632608F2DF0007F59E /* TagViewItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TagViewItem.xib; sourceTree = "<group>"; };
+		FD617E102611BFA200581038 /* DetailsHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsHeaderView.swift; sourceTree = "<group>"; };
+		FD617E182611BFBC00581038 /* DetailsHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailsHeaderView.xib; sourceTree = "<group>"; };
 		FD71A22E26004B2300D91539 /* BindableType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindableType.swift; sourceTree = "<group>"; };
 		FD71A2502600810C00D91539 /* Navigation+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Navigation+Extension.swift"; sourceTree = "<group>"; };
 		FD71A293260110A300D91539 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -223,6 +244,9 @@
 		FDB0BCF3260A42C500EAC6FD /* HomeLocal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeLocal.swift; sourceTree = "<group>"; };
 		FDB0BCF6260A42D000EAC6FD /* DetailsLocal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsLocal.swift; sourceTree = "<group>"; };
 		FDB0BCFC260A493C00EAC6FD /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		FDB0BD06260A5EBF00EAC6FD /* KarrosTechTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KarrosTechTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FDB0BD08260A5EBF00EAC6FD /* KarrosTechTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KarrosTechTests.swift; sourceTree = "<group>"; };
+		FDB0BD0A260A5EBF00EAC6FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FDB5B2AE2601D48000594057 /* ReachedScroll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReachedScroll.swift; sourceTree = "<group>"; };
 		FDB5B2C02603A66000594057 /* Utils+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Utils+Extension.swift"; sourceTree = "<group>"; };
 		FDF12C3025FC60F800136287 /* DetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewModel.swift; sourceTree = "<group>"; };
@@ -249,6 +273,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FDB0BD03260A5EBF00EAC6FD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A8D8151947B397B646F5B804 /* libPods-KarrosTechTests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -257,6 +289,8 @@
 			children = (
 				DA866CA104B1A4BE56F91886 /* Pods-KarrosTech.debug.xcconfig */,
 				4F348519EB77D5F1CE552EA3 /* Pods-KarrosTech.release.xcconfig */,
+				334A8116485354E8459F3099 /* Pods-KarrosTechTests.debug.xcconfig */,
+				13621BEE1F4072C662C772C7 /* Pods-KarrosTechTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -265,6 +299,7 @@
 			isa = PBXGroup;
 			children = (
 				89CBD9BBA17FF2F27C23516C /* Pods_KarrosTech.framework */,
+				69F2E07947816CEE9AB008EC /* libPods-KarrosTechTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -273,6 +308,7 @@
 			isa = PBXGroup;
 			children = (
 				FD0D061D25FB9EFE00A31015 /* KarrosTech */,
+				FDB0BD07260A5EBF00EAC6FD /* KarrosTechTests */,
 				FD0D061C25FB9EFE00A31015 /* Products */,
 				292D245689FCF6C04FE04C78 /* Pods */,
 				B0E71F0681CE2226A3A5B78D /* Frameworks */,
@@ -283,6 +319,7 @@
 			isa = PBXGroup;
 			children = (
 				FD0D061B25FB9EFE00A31015 /* KarrosTech.app */,
+				FDB0BD06260A5EBF00EAC6FD /* KarrosTechTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -347,6 +384,7 @@
 		FD0D063D25FBA1E800A31015 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				FD1D85A22610502A00052AE1 /* Date */,
 				FD531DFC2605D1420007F59E /* Typealias */,
 				FD71A24F260080E900D91539 /* Navigation */,
 				FD0D063E25FBA2C200A31015 /* View */,
@@ -376,6 +414,7 @@
 		FD0D065F25FBAB7500A31015 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				FD617E0F2611BF4100581038 /* HeaderView */,
 				FD531E012605E2C30007F59E /* DetailsCollectionViewCell */,
 				FD531E002605E2B50007F59E /* DetailsTableViewCell */,
 				FD531E5E2608F2940007F59E /* TagView */,
@@ -441,6 +480,14 @@
 				FD0D068D25FBAD7F00A31015 /* InfoView.xib */,
 			);
 			path = InfoView;
+			sourceTree = "<group>";
+		};
+		FD1D85A22610502A00052AE1 /* Date */ = {
+			isa = PBXGroup;
+			children = (
+				FD1D85A32610503D00052AE1 /* RelativeDatetime.swift */,
+			);
+			path = Date;
 			sourceTree = "<group>";
 		};
 		FD52768325FDE68500839EB9 /* Generic */ = {
@@ -573,6 +620,15 @@
 			path = TagView;
 			sourceTree = "<group>";
 		};
+		FD617E0F2611BF4100581038 /* HeaderView */ = {
+			isa = PBXGroup;
+			children = (
+				FD617E102611BFA200581038 /* DetailsHeaderView.swift */,
+				FD617E182611BFBC00581038 /* DetailsHeaderView.xib */,
+			);
+			path = HeaderView;
+			sourceTree = "<group>";
+		};
 		FD71A24F260080E900D91539 /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
@@ -671,6 +727,15 @@
 				FDB0BCFC260A493C00EAC6FD /* Model.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		FDB0BD07260A5EBF00EAC6FD /* KarrosTechTests */ = {
+			isa = PBXGroup;
+			children = (
+				FDB0BD08260A5EBF00EAC6FD /* KarrosTechTests.swift */,
+				FDB0BD0A260A5EBF00EAC6FD /* Info.plist */,
+			);
+			path = KarrosTechTests;
 			sourceTree = "<group>";
 		};
 		FDB5B2AD2601D44D00594057 /* ReachedScroll */ = {
@@ -804,6 +869,25 @@
 			productReference = FD0D061B25FB9EFE00A31015 /* KarrosTech.app */;
 			productType = "com.apple.product-type.application";
 		};
+		FDB0BD05260A5EBF00EAC6FD /* KarrosTechTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FDB0BD0F260A5EBF00EAC6FD /* Build configuration list for PBXNativeTarget "KarrosTechTests" */;
+			buildPhases = (
+				FE2FA5A8B3E63953AF6DD345 /* [CP] Check Pods Manifest.lock */,
+				FDB0BD02260A5EBF00EAC6FD /* Sources */,
+				FDB0BD03260A5EBF00EAC6FD /* Frameworks */,
+				FDB0BD04260A5EBF00EAC6FD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FDB0BD0C260A5EBF00EAC6FD /* PBXTargetDependency */,
+			);
+			name = KarrosTechTests;
+			productName = KarrosTechTests;
+			productReference = FDB0BD06260A5EBF00EAC6FD /* KarrosTechTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -815,6 +899,10 @@
 				TargetAttributes = {
 					FD0D061A25FB9EFE00A31015 = {
 						CreatedOnToolsVersion = 12.4;
+					};
+					FDB0BD05260A5EBF00EAC6FD = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = FD0D061A25FB9EFE00A31015;
 					};
 				};
 			};
@@ -832,6 +920,7 @@
 			projectRoot = "";
 			targets = (
 				FD0D061A25FB9EFE00A31015 /* KarrosTech */,
+				FDB0BD05260A5EBF00EAC6FD /* KarrosTechTests */,
 			);
 		};
 /* End PBXProject section */
@@ -857,6 +946,7 @@
 				FD0D068225FBAD1F00A31015 /* SeriesViewItem.xib in Resources */,
 				FD15EB9E26048E88005285D8 /* RecommendationCollectionViewCell.xib in Resources */,
 				FD531E642608F2DF0007F59E /* TagViewItem.xib in Resources */,
+				FD617E192611BFBC00581038 /* DetailsHeaderView.xib in Resources */,
 				FD531E4326076FA00007F59E /* DetailsSeriesViewItemCollectionViewCell.xib in Resources */,
 				FD15EB8526047371005285D8 /* TopRatedTableViewCell.xib in Resources */,
 				FD531E162605E95A0007F59E /* VideoTableViewCell.xib in Resources */,
@@ -872,6 +962,13 @@
 				FDF12C5125FC8D0F00136287 /* HeaderSectionView.xib in Resources */,
 				FD15EB8026047362005285D8 /* PopularTableViewCell.xib in Resources */,
 				FD531E392605F0A90007F59E /* DetailsRecommendationTableViewCell.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FDB0BD04260A5EBF00EAC6FD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -917,6 +1014,28 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KarrosTech/Pods-KarrosTech-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		FE2FA5A8B3E63953AF6DD345 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-KarrosTechTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -957,6 +1076,7 @@
 				FDB0BCE8260A264500EAC6FD /* DetailsRepositoryImpl.swift in Sources */,
 				FD531E47260770DC0007F59E /* DetailsVideoViewItemCollectionViewCell.swift in Sources */,
 				FD531DF62605CE900007F59E /* YourRateEntity.swift in Sources */,
+				FD617E112611BFA200581038 /* DetailsHeaderView.swift in Sources */,
 				FD531E602608F2CE0007F59E /* TagViewItem.swift in Sources */,
 				FD52767C25FDE4E600839EB9 /* ProductionCompanyEntity.swift in Sources */,
 				FD5276D525FF773600839EB9 /* HomeSectionData.swift in Sources */,
@@ -999,6 +1119,7 @@
 				FD531DFE2605D16A0007F59E /* Typealias.swift in Sources */,
 				FD531E57260795EA0007F59E /* UsEntity.swift in Sources */,
 				FD52768C25FE74AB00839EB9 /* ResultEntity.swift in Sources */,
+				FD1D85A42610503D00052AE1 /* RelativeDatetime.swift in Sources */,
 				FD0D068B25FBAD7300A31015 /* InfoView.swift in Sources */,
 				FD15EB9D26048E88005285D8 /* RecommendationCollectionViewCell.swift in Sources */,
 				FDF12C9025FCB59600136287 /* RecommendationEntity.swift in Sources */,
@@ -1007,7 +1128,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FDB0BD02260A5EBF00EAC6FD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FDB0BD09260A5EBF00EAC6FD /* KarrosTechTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FDB0BD0C260A5EBF00EAC6FD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FD0D061A25FB9EFE00A31015 /* KarrosTech */;
+			targetProxy = FDB0BD0B260A5EBF00EAC6FD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		FD0D062425FB9EFE00A31015 /* Main.storyboard */ = {
@@ -1064,6 +1201,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -1125,6 +1263,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -1185,6 +1324,50 @@
 			};
 			name = Release;
 		};
+		FDB0BD0D260A5EBF00EAC6FD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 334A8116485354E8459F3099 /* Pods-KarrosTechTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TTJSL9A4S8;
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = KarrosTechTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.gmail.tcthanh1992.KarrosTechTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KarrosTech.app/KarrosTech";
+			};
+			name = Debug;
+		};
+		FDB0BD0E260A5EBF00EAC6FD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 13621BEE1F4072C662C772C7 /* Pods-KarrosTechTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TTJSL9A4S8;
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = KarrosTechTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.gmail.tcthanh1992.KarrosTechTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KarrosTech.app/KarrosTech";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1202,6 +1385,15 @@
 			buildConfigurations = (
 				FD0D063025FB9F0100A31015 /* Debug */,
 				FD0D063125FB9F0100A31015 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FDB0BD0F260A5EBF00EAC6FD /* Build configuration list for PBXNativeTarget "KarrosTechTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FDB0BD0D260A5EBF00EAC6FD /* Debug */,
+				FDB0BD0E260A5EBF00EAC6FD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

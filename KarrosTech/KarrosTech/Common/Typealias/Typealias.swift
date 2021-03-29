@@ -43,6 +43,6 @@ typealias ResultsReviewModel = Results<ReviewEntity>
 typealias ObMovieDetailsModel = Observable<MovieDetailsEntity>
 typealias ObYourRateModel = Observable<YourRateEntity>
 typealias ObCreditsModel = Observable<CreditsEntity>
-typealias ObResultsVideoModel = Observable<Results<VideoEntity>>
+typealias ObResultsVideoModel = BehaviorRelay<Results<VideoEntity>>
 typealias ObResultsCommentModel = Observable<Results<ReviewEntity>>
 typealias ObResultWatchProvider = Observable<ResultWatchProviderEntity>

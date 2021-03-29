@@ -63,7 +63,7 @@ extension DetailsViewModel {
         let infoItems = DetailsSectionDataItem.Info(Observable.just(data.0))
         let rateItems = DetailsSectionDataItem.Rate(Observable.just(YourRateEntity(rating: 0.0, content: "")))
         let creditItems = DetailsSectionDataItem.Credit(Observable.just(data.1))
-        let videoItems = DetailsSectionDataItem.Video(Observable.just(data.2))
+        let videoItems = DetailsSectionDataItem.Video(BehaviorRelay(value: data.2))
         let commentItems = data.3.results?.map({ DetailsSectionDataItem.Comment($0) })
         let recommendationItems = DetailsSectionDataItem.Recommendation(BehaviorRelay(value: data.4))
         

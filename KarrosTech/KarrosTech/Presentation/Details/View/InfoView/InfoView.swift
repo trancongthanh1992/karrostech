@@ -53,19 +53,14 @@ class InfoView: UIView, NibOwnerLoadable {
         self.thumbImageView.applyshadowWithCorner(containerView: shadowView)
         
         self.totalRateLabel.numberOfLines = 1
-        self.totalRateLabel.font = UIFont(name: "Helvetica", size: 18)
-        //self.totalRateLabel.textColor = .init(red: 241, green: 202, blue: 35, alpha: 255)
+        self.totalRateLabel.fontSize(18)
         
         self.dateLabel.font = UIFont(name: "Helvetica", size: 18)
-        //self.dateLabel.textColor = .init(red: 62, green: 74, blue: 89, alpha: 255)
         
-        self.titleLabel.font = UIFont(name: "Helvetica", size: 24)
-        //self.titleLabel.textColor = .init(red: 62, green: 74, blue: 89, alpha: 255)
-            
+        self.titleLabel.fontSize(24)
+
         self.contentLabel.numberOfLines = 4
-        self.contentLabel.font = UIFont(name: "Helvetica", size: 18)
-        //self.contentLabel.textColor = .init(red: 62, green: 74, blue: 89, alpha: 255)
-            
+        self.contentLabel.fontSize(18)
         self.readMoreButton.setTitle("Read more", for: .normal)
         
     }

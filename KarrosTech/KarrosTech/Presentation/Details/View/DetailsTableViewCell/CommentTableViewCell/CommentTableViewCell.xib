@@ -28,6 +28,9 @@
                     <constraint firstItem="f10-io-w9l" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="b2B-sb-Gq9"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="containerView" destination="f10-io-w9l" id="9g4-sC-BDk"/>
+            </connections>
             <point key="canvasLocation" x="18.840579710144929" y="126.22767857142857"/>
         </tableViewCell>
     </objects>

@@ -7,12 +7,15 @@
 
 import UIKit
 import Reusable
+import YouTubePlayer
 
 class VideoViewItem: UIView, NibOwnerLoadable {
 
     @IBOutlet weak var shadowView: UIView!
-    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var videoView: YouTubePlayerView!
     @IBOutlet weak var playButton: UIButton!
+    var didPlayVideo: ((YouTubePlayerView) -> Void)!
+    
     /*
     // Only override draw() if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
@@ -37,8 +40,15 @@ class VideoViewItem: UIView, NibOwnerLoadable {
     }
     
     private func setupView() {
-        imageView.contentMode = .scaleAspectFill
-        imageView.applyshadowWithCorner(containerView: shadowView, cornerRadius: 12)
+        videoView.contentMode = .scaleAspectFill
+        videoView.layer.cornerRadius = 8
+        videoView.layer.masksToBounds = true
+        shadowView.applyshadowWithCorner(cornerRadius: 12)
         playButton.setImage(UIImage(named: "ic-play-white"), for: .normal)
     }
+    
+    @IBAction func onPlayVideo(_ sender: Any) {
+        self.didPlayVideo(self.videoView)
+    }
+    
 }

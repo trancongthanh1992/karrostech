@@ -9,18 +9,16 @@ import UIKit
 import RxSwift
 import Kingfisher
 import Reusable
-import AVKit
-import AVFoundation
+
+import YouTubePlayer
 
 class DetailsVideoViewItemCollectionViewCell: UICollectionViewCell, NibReusable {
 
     private var disposeBag: DisposeBag = DisposeBag()
     @IBOutlet weak var containerView: VideoViewItem!
-    
-    
-    var avPlayer = AVPlayer()
-    var avPlayerLayer = AVPlayerLayer()
-    
+    var indexPath: Int!
+    var playSubject: PublishSubject<(item: VideoEntity,cell: DetailsVideoViewItemCollectionViewCell, indexPath: Int)>!
+        
     var model: VideoEntity! {
         didSet {
             bindingModel(model)
@@ -34,13 +32,23 @@ class DetailsVideoViewItemCollectionViewCell: UICollectionViewCell, NibReusable 
     override func prepareForReuse() {
         super.prepareForReuse()
         self.disposeBag = DisposeBag()
-//        self.containerView.imageView.kf.cancelDownloadTask()
     }
 
     
     private func bindingModel(_ model: VideoEntity) -> Void {
-//        guard let profilePath = model.profilePath else { return }
-//        let url = URL(string: "https://image.tmdb.org/t/p/w300\(profilePath)")
-//        self.containerView.imageView.kf.setImage(with: url)
+        
+        guard let key = model.key else { return }
+        containerView.videoView.playerVars = [
+             "playsinline": "1",
+             "controls": "0",
+             "showinfo": "0"
+             ] as YouTubePlayerView.YouTubePlayerParameters
+        containerView.videoView.loadVideoID(key)
+    
+        containerView.playButton.isHidden = model.isPlay
+        
+        containerView.didPlayVideo = {[unowned self] videoPlayer in
+            playSubject.onNext((item: model, cell: self, indexPath: indexPath))
+        }
     }
 }

@@ -43,7 +43,7 @@
         <scene sceneID="cfA-Id-4y6">
             <objects>
                 <viewController storyboardIdentifier="DetailsViewController" id="484-ym-7bP" customClass="DetailsViewController" customModule="KarrosTech" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8va-mK-E5l">
+                    <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="8va-mK-E5l">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -52,7 +52,6 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="Vwa-Ce-Pcp"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="dV0-Ue-UqS" firstAttribute="leading" secondItem="8va-mK-E5l" secondAttribute="leading" id="2Mx-IX-SFz"/>

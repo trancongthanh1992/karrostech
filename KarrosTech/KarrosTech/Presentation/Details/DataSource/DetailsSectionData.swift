@@ -65,8 +65,7 @@ struct DetailsDataSource {
             case let .Comment(model):
                 let cell = tableView.dequeueReusableCell(for: indexPath) as CommentTableViewCell
                 cell.viewModel = viewModel
-                
-//                cell.model = model
+                cell.model = model
                 return cell
             case let .Recommendation(model):
                 let cell = tableView.dequeueReusableCell(for: indexPath) as DetailsRecommendationTableViewCell

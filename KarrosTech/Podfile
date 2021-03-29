@@ -17,17 +17,18 @@ def networking
 end
 
 def testing
-  #pod 'Quick'
-  #pod 'Nimble'
-  #pod 'Nimble-Snapshots'
-  #pod 'RxBlocking'
-  #pod 'RxTest'
+  pod 'Quick'
+  pod 'Nimble'
+  pod 'Nimble-Snapshots'
+  pod 'RxBlocking'
+  pod 'RxTest'
 end
 
 def ui
   #pod "StatefulViewController", "~> 3.0"
   #pod 'SkeletonView'
   pod 'Reusable'
+  pod 'YouTubePlayer'
 end
 
 target 'KarrosTech' do
@@ -36,6 +37,12 @@ target 'KarrosTech' do
   # Pods for KarrosTech
   rx()
   networking()
-  testing()
+  #testing()
   ui()
+end
+
+target 'KarrosTechTests' do
+  inherit! :search_paths
+  # Pods for testing
+  testing()
 end

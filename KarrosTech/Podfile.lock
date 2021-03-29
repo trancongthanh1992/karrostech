@@ -4,6 +4,11 @@ PODS:
     - RxSwift (~> 4.0)
   - Alamofire (4.9.1)
   - Differentiator (3.1.0)
+  - iOSSnapshotTestCase (5.0.2):
+    - iOSSnapshotTestCase/SwiftSupport (= 5.0.2)
+  - iOSSnapshotTestCase/Core (5.0.2)
+  - iOSSnapshotTestCase/SwiftSupport (5.0.2):
+    - iOSSnapshotTestCase/Core
   - Kingfisher (4.10.1)
   - Moya/Core (13.0.1):
     - Alamofire (~> 4.1)
@@ -11,12 +16,21 @@ PODS:
   - Moya/RxSwift (13.0.1):
     - Moya/Core
     - RxSwift (~> 4.0)
+  - Nimble (7.3.4)
+  - Nimble-Snapshots (6.9.1):
+    - Nimble-Snapshots/Core (= 6.9.1)
+  - Nimble-Snapshots/Core (6.9.1):
+    - iOSSnapshotTestCase (~> 5.0)
+    - Nimble (~> 7.0)
+  - Quick (3.1.2)
   - Result (4.1.0)
   - Reusable (4.1.1):
     - Reusable/Storyboard (= 4.1.1)
     - Reusable/View (= 4.1.1)
   - Reusable/Storyboard (4.1.1)
   - Reusable/View (4.1.1)
+  - RxBlocking (4.5.0):
+    - RxSwift (>= 4.4.2, ~> 4.4)
   - RxCocoa (4.5.0):
     - RxSwift (>= 4.4.2, ~> 4.4)
   - RxDataSources (3.1.0):
@@ -35,47 +49,70 @@ PODS:
   - RxSwiftExt/RxCocoa (3.4.0):
     - RxCocoa (~> 4.0)
     - RxSwiftExt/Core
+  - RxTest (4.5.0):
+    - RxSwift (>= 4.4.2, ~> 4.4)
+  - YouTubePlayer (0.7.2)
 
 DEPENDENCIES:
   - Action
   - Kingfisher
   - Moya/RxSwift (~> 13.0.0)
+  - Nimble
+  - Nimble-Snapshots
+  - Quick
   - Reusable
+  - RxBlocking
   - RxCocoa
   - RxDataSources
   - RxOptional
   - RxSwift
   - RxSwiftExt
+  - RxTest
+  - YouTubePlayer
 
 SPEC REPOS:
   trunk:
     - Action
     - Alamofire
     - Differentiator
+    - iOSSnapshotTestCase
     - Kingfisher
     - Moya
+    - Nimble
+    - Nimble-Snapshots
+    - Quick
     - Result
     - Reusable
+    - RxBlocking
     - RxCocoa
     - RxDataSources
     - RxOptional
     - RxSwift
     - RxSwiftExt
+    - RxTest
+    - YouTubePlayer
 
 SPEC CHECKSUMS:
   Action: 689181e4c3f6566844178d8a7da6fef39a9597fc
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
   Differentiator: be49ca3408f0ecfc761e4c7763d20c62be01b9ad
+  iOSSnapshotTestCase: 2d51aa06775e95cecb0a1fb9c5c159ccd1dd4596
   Kingfisher: c148cd7b47ebde9989f6bc7c27dcaa79d81279a0
   Moya: f4a4b80ff2f8a4ffc208dfb31cd91636622fee6e
+  Nimble: 051e3d8912d40138fa5591c78594f95fb172af37
+  Nimble-Snapshots: bbd1ab264bacc24a9ce24a8363bc05aac783aeb0
+  Quick: 60f0ea3b8e0cfc0df3259a5c06a238ad8b3c46e0
   Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
   Reusable: 53a9acf5c536f229b31b5865782414b508252ddb
+  RxBlocking: 79413e4d916f44bb3e113c5b2cc059e36fe58910
   RxCocoa: cbf70265dc65a981d4ac982e513c10cf23df24a0
   RxDataSources: a843bad90c29817f5923ec8163f4af2de084ceb3
   RxOptional: 80426a0ddbd092573e4c482d8cc13302078c4d5e
   RxSwift: f172070dfd1a93d70a9ab97a5a01166206e1c575
   RxSwiftExt: 01f8ecbeeb355698e9c75365ebe908b00dacf45d
+  RxTest: 3ccb66bfbace0bf7df1c43a7c75d046f8ce60372
+  YouTubePlayer: 2b5f2830d8f9b2cde942083211291e382c9e6bd5
 
-PODFILE CHECKSUM: b68141a976a096163d6785a01013da239493b655
+PODFILE CHECKSUM: 3512307bd6a8f1fa30c40faa52fee63bb2dd2ce4
 
 COCOAPODS: 1.10.1
